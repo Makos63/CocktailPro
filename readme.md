@@ -52,5 +52,7 @@ Nun können Sie über die Konfiguration leicht wählen, ob Sie den ausführbaren
 ## Viel Erfolg mit dem CocktailPro!
 
 Ralf Hahn
+
 Urs Andelfinger
+
 Stefan T. Ruehl
