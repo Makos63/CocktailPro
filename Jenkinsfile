@@ -33,7 +33,7 @@ node {
 
     stage("Pull") {
         echo "********************************"
-        echo "repositoryUrl"
+        echo repositoryUrl
         echo "********************************"
         // Pulling the sources from the repository
         // WARNING: Be sure, that you are using the right repository
