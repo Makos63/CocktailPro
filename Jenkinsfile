@@ -28,16 +28,17 @@ node {
     def GTEST_REPORT = "${env.WORKSPACE}/${GTEST_REPORT_REL}"
 
     def EVALUATION_DIR = "/tmp/SWE/${env.JOB_NAME}"
-    def repositoryUrl = scm.userRemoteConfigs[0].url  
+    def REPOSITORY_URL = scm.userRemoteConfigs[0].url  
     
 
     stage("Pull") {
         echo "********************************"
-        echo repositoryUrl
+        echo REPOSITORY_URL
         echo "********************************"
         // Pulling the sources from the repository
         // WARNING: Be sure, that you are using the right repository
-        git url: "https://code.fbi.h-da.de/SE/cocktailpro_legacy.git", credentialsId: "b5b0468b-4d7b-46cf-80c8-bb6d45929adb"
+        // git url: "https://code.fbi.h-da.de/SE/cocktailpro_legacy.git", credentialsId: "b5b0468b-4d7b-46cf-80c8-bb6d45929adb"
+        git url: REPOSITORY_URL, credentialsId: "b5b0468b-4d7b-46cf-80c8-bb6d45929adb"
     }
 
 /*
