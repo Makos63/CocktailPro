@@ -28,6 +28,7 @@ node {
     def GTEST_REPORT = "${env.WORKSPACE}/${GTEST_REPORT_REL}"
 
     def EVALUATION_DIR = "/tmp/SWE/${env.JOB_NAME}"
+    
 
     stage("Pull") {
         // Pulling the sources from the repository
