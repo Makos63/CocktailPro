@@ -28,6 +28,8 @@ node {
     def GTEST_REPORT = "${env.WORKSPACE}/${GTEST_REPORT_REL}"
 
     def EVALUATION_DIR = "/tmp/SWE/${env.JOB_NAME}"
+    def repositoryUrl = scm.userRemoteConfigs[0].url  
+    echo "repositoryUrl"
     
 
     stage("Pull") {
