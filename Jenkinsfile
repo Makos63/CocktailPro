@@ -29,10 +29,12 @@ node {
 
     def EVALUATION_DIR = "/tmp/SWE/${env.JOB_NAME}"
     def repositoryUrl = scm.userRemoteConfigs[0].url  
-    echo "repositoryUrl"
     
 
     stage("Pull") {
+        echo "********************************"
+        echo "repositoryUrl"
+        echo "********************************"
         // Pulling the sources from the repository
         // WARNING: Be sure, that you are using the right repository
         git url: "https://code.fbi.h-da.de/SE/cocktailpro_legacy.git", credentialsId: "b5b0468b-4d7b-46cf-80c8-bb6d45929adb"
