@@ -32,7 +32,7 @@ node {
     stage("Pull") {
         // Pulling the sources from the repository
         // WARNING: Be sure, that you are using the right repository
-        git url: "https://code.fbi.h-da.de/l.koehler/swe_2019_cocktailpro_prepare_revision.git", credentialsId: "cb4ab272-5e3d-40af-9d1a-a3f66cde79f4"
+        git url: "https://code.fbi.h-da.de/SE/cocktailpro_legacy.git", credentialsId: "cb4ab272-5e3d-40af-9d1a-a3f66cde79f4"
     }
 
 /*
