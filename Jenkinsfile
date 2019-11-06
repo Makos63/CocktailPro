@@ -110,8 +110,8 @@ node {
 
 	try {
 		stage("Doxygen") {
-			sh "cmake --build ${BUILD_DIR} --target CocktailProDoxygen 2>&1 | tee -a ${DOXYGEN_WARNINGS_LOG}"
-			//sh "cmake --build ${BUILD_DIR} --target CocktailProDoxygen 2> ${DOXYGEN_WARNINGS_LOG}"
+			//sh "cmake --build ${BUILD_DIR} --target CocktailProDoxygen 2>&1 | tee -a ${DOXYGEN_WARNINGS_LOG}"
+			sh "cmake --build ${BUILD_DIR} --target CocktailProDoxygen 2> ${DOXYGEN_WARNINGS_LOG}"
 		}
 	} catch (err) {
 		currentBuild.result = 'SUCCESS'
