@@ -104,8 +104,8 @@ node {
 	}
 
 	stage("Build") {
-		//sh "cmake --build ${BUILD_DIR} --target CocktailPro 2> ${COMPILER_WARNINGS_LOG}"        
-		sh "cmake --build ${BUILD_DIR} --target CocktailPro 2>&1 | tee -a ${COMPILER_WARNINGS_LOG}"
+		sh "cmake --build ${BUILD_DIR} --target CocktailPro 2> ${COMPILER_WARNINGS_LOG}"        
+		//sh "cmake --build ${BUILD_DIR} --target CocktailPro 2>&1 | tee -a ${COMPILER_WARNINGS_LOG}"
 	}
 
 	try {
