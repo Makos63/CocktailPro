@@ -1,3 +1,4 @@
+# Kommentar von stchkehr
 # CocktailPro Legacy
 
 Im Jahr 2015 wurde eine Software zur Simulation eines Cocktail-Misch-Geräts entwickelt: der **"CocktailPro"**. Die Software wurde aber als Prototyp und nicht für einen dauerhaften Betrieb entwickelt. Deshalb enthält der Code praktisch keine Kommentare und leider auch keine sonstige Dokumentation. Auch kleinere Fehler sind bekannt, wurden aber nie behoben.
