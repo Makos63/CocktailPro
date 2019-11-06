@@ -12,7 +12,7 @@ Die Entwicklung des Codes erfolgt unter Verwendung von Git. In diesem Projekt ve
 
 Um die Software weiterentwickeln zu können, brauchen Sie entsprechende Software. Auf den Laborrechnern ist diese vorhanden, auf Ihrem Privatrechner müssen Sie die Software eventuell noch installieren
 
-- **Git** (https://git-scm.com) und
+- **Git** (https://git-scm.com)  ^und
 
 - evtl. ein **grafischer Git-Client** (z.B. https://tortoisegit.org/)
 
