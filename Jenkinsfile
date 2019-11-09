@@ -103,10 +103,19 @@ node {
 			-DDOXYGEN_PROJECT_BRIEF='Praktikum Software Engineering, fbi, h_da, WS2019'"
 	}
 
-	stage("Build") {
-		sh "cmake --build ${BUILD_DIR} --target CocktailPro 2> ${COMPILER_WARNINGS_LOG}"        
-		//sh "cmake --build ${BUILD_DIR} --target CocktailPro 2>&1 | tee -a ${COMPILER_WARNINGS_LOG}"
-	}
+    stage("Build") {
+    	try {
+        // zeigt die Meldungen und bei Error nur die Bugs
+        sh "cmake --build ${BUILD_DIR} --target CocktailPro 2> ${COMPILER_WARNINGS_LOG};"
+        sh "cat ${COMPILER_WARNINGS_LOG} >&2"
+      }
+      catch (err) {
+      	  sh "cmake --build ${BUILD_DIR} --target CocktailPro"
+      	  currentStage.result = 'FAILURE'
+      }
+    }
+
+
 
 	try {
 		stage("Doxygen") {
