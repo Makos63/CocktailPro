@@ -58,4 +58,8 @@ Urs Andelfinger
 
 Stefan T. Ruehl
 
+<<<<<<< HEAD
 stjeanda hello
+=======
+stjeanda
+>>>>>>> test_branch
