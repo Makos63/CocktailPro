@@ -1,5 +1,7 @@
 # Kommentar von stchkehr
 # CocktailPro Legacy
+heey es gehtv22222 
+ich habe meine branch erstellt
 
 Im Jahr 2015 wurde eine Software zur Simulation eines Cocktail-Misch-Geräts entwickelt: der **"CocktailPro"**. Die Software wurde aber als Prototyp und nicht für einen dauerhaften Betrieb entwickelt. Deshalb enthält der Code praktisch keine Kommentare und leider auch keine sonstige Dokumentation. Auch kleinere Fehler sind bekannt, wurden aber nie behoben.
 Nun soll die Software von Ihnen weiterentwickelt werden, allerdings so, dass die üblichen Qualitätsansprüche an eine "ernst gemeinte" Software erfüllt sind. 
@@ -57,3 +59,9 @@ Ralf Hahn
 Urs Andelfinger
 
 Stefan T. Ruehl
+
+<<<<<<< HEAD
+stjeanda hello
+=======
+stjeanda
+>>>>>>> test_branch
