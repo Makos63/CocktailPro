@@ -26,7 +26,6 @@
 class RecipeBook {
     /**
     * This is the list of recipes that the RecipeBook manages
-    *
     */
   private:
     std::list<Recipe *> m_Recipe;
