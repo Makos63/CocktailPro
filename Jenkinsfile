@@ -13,7 +13,10 @@ node {
 
     def REPORTS_DIR = "${env.WORKSPACE}/${REPORTS_DIR_REL}"
     def GITSTATS_DIR = "${REPORTS_DIR}/gitstats"
-    def CCCC_DIR = "${REPORTS_DIR}/cccc"
+
+    def CCCC_DIR_REL = "${REPORTS_DIR_REL}/cccc"
+    def CCCC_DIR = "${env.WORKSPACE}/${CCCC_DIR_REL}"
+
     def COVERAGE_DIR = "${REPORTS_DIR}/coverage"
     def DOXYGEN_DIR = "${env.WORKSPACE}/${DOXYGEN_DIR_REL}"
 
@@ -103,6 +106,7 @@ node {
 			-DDOXYGEN_PROJECT_BRIEF='Praktikum Software Engineering, fbi, h_da, WS2019'"
 	}
 
+
     stage("Build") {
     	try {
         // zeigt die Meldungen und bei Error nur die Bugs
@@ -113,13 +117,11 @@ node {
       	  sh "cmake --build ${BUILD_DIR} --target CocktailPro"
       	  currentStage.result = 'FAILURE'
       }
-    }
-
-
+	}
 
 	try {
 		stage("Doxygen") {
-			//sh "cmake --build ${BUILD_DIR} --target CocktailProDoxygen 2>&1 | tee -a ${DOXYGEN_WARNINGS_LOG}"
+			//sh "cmake --build ${BUILD_DIR} --target CocktailProDoxygen 2>&1 | tee ${DOXYGEN_WARNINGS_LOG}"
 			sh "cmake --build ${BUILD_DIR} --target CocktailProDoxygen 2> ${DOXYGEN_WARNINGS_LOG}"
 		}
 	} catch (err) {
@@ -136,7 +138,12 @@ node {
 
 	try {
 		stage("CCCC") {
-			sh "cccc --opt_infile=${CONFIG_DIR}/cccc.opt --outdir=${CCCC_DIR} --report_mask=pPS ${SOURCE_DIR}/*"
+      // RH 11/2019: --report_mask=pPS fails to create cccc_src.html (links in report are not working)
+			//sh "cd ${SOURCE_DIR}; cccc --opt_infile=${CONFIG_DIR}/cccc.opt --outdir=${CCCC_DIR_REL} --html_outfile=${CCCC_DIR}/cccc.html --report_mask=pPS *.cpp *.h; cd ${env.WORKSPACE}"
+
+			// RH 11/2019: changed directory to confine links to name of file (and not src/main/xxx...)
+			// RH 11/2019: added report_mask 'L' to create cccc_src.html
+			sh "cd ${SOURCE_DIR}; cccc --opt_infile=${CONFIG_DIR}/cccc.opt --outdir=${CCCC_DIR} --report_mask=LpPS *.cpp *.h; cd ${env.WORKSPACE}"
 		}
 	} catch (err) {
 		currentBuild.result = 'SUCCESS'
@@ -149,8 +156,7 @@ node {
 	} catch (err) {
 		currentBuild.result = 'SUCCESS'
 	}		
-		
-		
+
 	try {
 		stage("Test") {
 			// Build Executable for Test
@@ -206,11 +212,12 @@ node {
 						 reportName  : "Doxygen Document", reportTitles: ""])
 			// Publish CCCC Report
 			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false,
-						 reportDir   : "${CCCC_DIR}", reportFiles: "cccc.html",
-						 reportName  : "CCCC Report", reportTitles: ""])
+						 reportDir   : "${CCCC_DIR_REL}", reportFiles: "cccc.html",
+						 reportName  : "CCCC Report", reportTitles: "",
+						 escapeUnderscores : false])
 			// Publish Code Coverage
 			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false,
-						 reportDir   : "${COVERAGE_DIR}", reportFiles: "index.html",
+						 reportDir   : "${COVERAGE_DIR}", reportFiles: "main/index.html",
 						 reportName  : "Code Coverage", reportTitles: ""])
 			// Publish Git Statistics
 			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false,
