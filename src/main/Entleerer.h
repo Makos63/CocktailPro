@@ -23,9 +23,9 @@ public:
 /**
 * 	@brief Default constructor.
 *
-* 	@param Gets Parmeter: weight (g)
-*	@param Gets Parmeter: time (ze) 
-*	@param Gets Parmeter: scale (wg)
+* 	@param g (weight)
+*	@param ze (time)
+*	@param wg (scale)
 *
 * 	@return no return
 */
@@ -34,17 +34,13 @@ public:
 	
 	/**
 	* 	@brief Checks, if weight was reached.
-	*
-	* 	@param no parameters
-	*
-	* 
 	*/
     void update();
 
 	/**
 	*	@brief Empties the mixer.
 	*
-	*	@param takes the float "value"
+	*	@param value represents the amount that needs to be given out
 	*
 	*	Prints the weight and that the empty-process starts.
 	*	Outputs cocktail as long as "doinIt" is true and gets the value of outputted fluid.

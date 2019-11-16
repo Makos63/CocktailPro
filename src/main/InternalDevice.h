@@ -17,19 +17,11 @@ class InternalDevice {
 public:
 	/**
 	* 	@brief virtual method with no declaration
-	*
-	*	@param value
-	*
-	*	@return none
 	*/
     virtual void doIt(float value) = 0;
 
 	/**
 	*	@brief mixer is cleaning and prints it.
-	*	
-	*	@param none
-	*
-	*	@return none
 	*
 	*	function prints, that the mixer is cleaning itself and prints out start and end of the process
 	*/
@@ -49,10 +41,6 @@ private:
 public:
 	/**
 	*	@brief Constructor of InternalDevice
-	*
-	*	@param none
-	*
-	*	@return none
 	*
 	*	sets the Timer to the value of the Timer - getInstance value.
 	*	sets doinIt to 0 / false

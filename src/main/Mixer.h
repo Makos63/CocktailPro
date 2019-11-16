@@ -18,10 +18,6 @@ class Mixer : public InternalDevice {
 public:
 	/**
 	*	@brief default constructor call
-	*	
-	*	@param none
-	*
-	*	@return none
 	*
 	*	constructor is not defined in the cpp
 	*/
@@ -30,9 +26,7 @@ public:
 	/**
 	*	@brief gets time and sleeps 
 	*
-	*	@param float time
-	*
-	*	@return none
+	*	@param time how long it shall output
 	*
 	*	Gets the time as float and multiplies it with 1000 to get seconds.
 	*	Sleeps for n-seconds and prints an endline.

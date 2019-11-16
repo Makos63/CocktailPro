@@ -31,9 +31,7 @@ public:
 	/**
 	*	@brief Calls standart constructor
 	*	
-	*	@param object of "Vorhandene Zutaten"
-	*
-	*	@return none
+	*	@param ze object of "Vorhandene Zutaten"
 	*
 	*	prints "all available recipes before filtering"
 	*	calls browse, to print the recipes
@@ -42,10 +40,6 @@ public:
 	
 	/**
 	*	@brief Prints Recipes.
-	*	
-	*	@param none.
-	*
-	*	@return none.
 	*
 	*	prints number of recipes.
 	*	then it  iterates through the vector "rezepte" and calls the browse for the object in the vector
@@ -66,10 +60,6 @@ private:
 	/**
 	*	@brief	deletes non available recipes
 	*
-	*	@param none
-	*
-	*	@return none
-	*
 	*	iterates through all recipes and checks, if all ingredients are available.
 	*	if not, it deletes it, to reduce size of the vector
 	*/
@@ -78,9 +68,7 @@ private:
 	/**
 	*	@brief transferes the "VorhandeneZutaten" to myZutatenVerwalter
 	*
-	*	@param pointer to VorhandeneZutaten
-	*
-	*	@return none;
+	*	@param ze pointer to VorhandeneZutaten
 	*
 	*	sets myZutatenVerwalter to VorhandeneZutaten
 	*/
