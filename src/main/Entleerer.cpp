@@ -8,6 +8,7 @@ Entleerer::Entleerer(float g, int ze, Waage * wg) : InternalDevice() {
     this->zeiteinheit = ze;
     this->myWaage = wg;
     this->myWaage->attach(this);
+    this->value = 0.0;
 }
 
 Entleerer::~Entleerer(){

@@ -1,0 +1,7 @@
+******************* Entleerer.cpp *******************
+set default value for "value" in constructor.
+
+******************* InternalDevice.cpp ******************* 
+set default value for "zeiteinheit" in contructor
+
+commented out method "setTimer" for maybe later use

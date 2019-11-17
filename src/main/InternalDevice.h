@@ -30,12 +30,8 @@ public:
 private:
 	/**
 	* 	@brief constructor call for Timer.
-	*
-	*	@param no parameters
-	*
-	*	@return no return
 	*/
-    void setTimer();
+    //void setTimer();
 
 
 public:
