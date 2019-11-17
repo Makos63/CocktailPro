@@ -42,7 +42,7 @@ void DeviceVerwalter::setZutatenVerwalter(VorhandeneZutaten * zv) {
 
 void DeviceVerwalter::rezeptSchrittZubereiten(std::string zutat, float menge) {
 
-    std::map<std::string, InternalDevice *>::iterator tmpDevice;
+    //std::map<std::string, InternalDevice *>::iterator tmpDevice;
 
    // tmpDevice = myDevices->find(zutat);
 
