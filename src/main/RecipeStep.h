@@ -65,7 +65,7 @@ class RecipeStep {
 *
 * copy of m_Zutat
 */
-    void setZutat(std::string m_Zutat);
+    void setZutat(std::string zutat);
 
 /**
 * @brief set amount of ingredient
@@ -74,7 +74,7 @@ class RecipeStep {
 * copy of m_Menge
 */
 
-    void setMenge(float m_Menge);
+    void setMenge(float menge);
 
 };
 #endif
