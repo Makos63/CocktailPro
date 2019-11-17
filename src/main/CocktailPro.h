@@ -22,7 +22,7 @@
 
 class CocktailPro {
  protected:
-  /** @defgroup CocktailProMainManager
+  /** @defgroup CocktailProMain Manager
  *  This is are instances of another parts of the program
  *  @{
  */
