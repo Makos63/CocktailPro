@@ -5,3 +5,6 @@ set default value for "value" in constructor.
 set default value for "zeiteinheit" in contructor
 
 commented out method "setTimer" for maybe later use
+
+******************* MischbaresRezept.cpp ******************* 
+made constructor explicit
