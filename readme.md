@@ -1,3 +1,4 @@
+# Kommentar von stchkehr
 # CocktailPro Legacy
 heey es gehtv22222 
 ich habe meine branch erstellt
@@ -58,3 +59,9 @@ Ralf Hahn
 Urs Andelfinger
 
 Stefan T. Ruehl
+
+<<<<<<< HEAD
+stjeanda hello
+=======
+stjeanda
+>>>>>>> test_branch

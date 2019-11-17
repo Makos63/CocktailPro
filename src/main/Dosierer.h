@@ -36,10 +36,9 @@ public:
 
 
  /**
-  *
   * @brief Open the vents and outputs the substance until required amount has been reached.
   * Increment die scale dependent on the weight of the input
-  * @param amount of gramm to be processed in float
+  * @param gramm amount of gramm to be processed in float
   */
     void doIt(float gramm);
 

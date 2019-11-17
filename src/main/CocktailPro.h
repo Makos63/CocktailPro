@@ -42,8 +42,7 @@ class CocktailPro {
    * Singelton pattern of VorhandeneZutaten
    */
     VorhandeneZutaten * theZutatenVerwalter;
-/** @} */
-// end of group1
+/** @} */ // end of group1
 
  protected:
   /**

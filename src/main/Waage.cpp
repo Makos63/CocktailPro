@@ -5,13 +5,14 @@
 
 
 Waage::Waage(){
-
+  weight = 0;
+  deltaweight =0;
 }
 
 
 Waage::Waage(const Waage &org){
-  this->weight = weight;
-  this->deltaweight = deltaweight;
+  this->weight = org.weight;
+  this->deltaweight = org.deltaweight;
 }
 
 void Waage::changeWeight(int v) {
