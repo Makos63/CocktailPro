@@ -44,7 +44,7 @@ void DeviceVerwalter::rezeptSchrittZubereiten(std::string zutat, float menge) {
 
     std::map<std::string, InternalDevice *>::iterator tmpDevice;
 
-    tmpDevice = myDevices->find(zutat);
+   // tmpDevice = myDevices->find(zutat);
 
     if (zutat == "Limettenstuecke") {
         // Der Kunde will Limetten ja unbedingt nach Stueck und nicht nach Gewicht abmessen...
@@ -61,7 +61,7 @@ void DeviceVerwalter::entleeren(float menge) {
 }
 
 void DeviceVerwalter::putzen() {
-    for (std::map<std::string, InternalDevice*>::iterator i = myDevices->begin(); i != myDevices->end(); i++) {
+    for (std::map<std::string, InternalDevice*>::iterator i = myDevices->begin(); i != myDevices->end(); ++i) {
           std::cout << "Device mit der Aktion: " << i->first << " wird jetzt geputzt: " << std::endl;
         i->second->putzen();
     }

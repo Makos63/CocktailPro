@@ -17,3 +17,8 @@ changed variables names, added constructors
 
 ******************* Recipe.h/cpp *******************
 added constructor
+
+******************* DeviceVerwalter.cpp *******************
+changed i++ to ++i for performance improvements
+
+commented out tmpDevice because it is not used yet
