@@ -20,7 +20,7 @@ bool CocktailZubereiter::cocktailZubereiten(Recipe * rzpt) {
         std::cout << "Rezeptschritt: " << zutat << ", " << menge << std::endl;
         myDeviceVerwalter->rezeptSchrittZubereiten(zutat, menge);
     }
-    myDeviceVerwalter->entleeren(i);
+    myDeviceVerwalter->entleeren(i);//TODO Is it a bug? it takes the iteration step as input???
     myDeviceVerwalter->putzen();
     return (true);
 }
