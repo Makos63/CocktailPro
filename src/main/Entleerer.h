@@ -45,7 +45,7 @@ public:
 	*	Prints the weight and that the empty-process starts.
 	*	Outputs cocktail as long as "doinIt" is true and gets the value of outputted fluid.
 	*/
-    void doIt(float value);
+    void doIt(float valueInput);
 
 private:
 
