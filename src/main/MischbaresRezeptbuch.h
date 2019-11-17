@@ -36,7 +36,7 @@ public:
 	*	prints "all available recipes before filtering"
 	*	calls browse, to print the recipes
 	*/
-    MischbaresRezeptbuch(VorhandeneZutaten * ze);
+    explicit MischbaresRezeptbuch(VorhandeneZutaten * ze);
 	
 	/**
 	*	@brief Prints Recipes.

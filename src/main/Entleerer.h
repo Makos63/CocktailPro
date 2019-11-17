@@ -40,12 +40,12 @@ public:
 	/**
 	*	@brief Empties the mixer.
 	*
-	*	@param value represents the amount that needs to be given out
+	*	@param valueInput represents the amount that needs to be given out
 	*
 	*	Prints the weight and that the empty-process starts.
 	*	Outputs cocktail as long as "doinIt" is true and gets the value of outputted fluid.
 	*/
-    void doIt(float value);
+    void doIt(float valueInput);
 
 private:
 
