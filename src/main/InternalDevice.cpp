@@ -10,6 +10,7 @@ void InternalDevice::setTimer() {
 InternalDevice::InternalDevice() {
     myTimer = Timer::getInstance();
     this->doinIt = 0;
+    this->zeiteinheit = 0;
 }
 
 void InternalDevice::putzen() {
