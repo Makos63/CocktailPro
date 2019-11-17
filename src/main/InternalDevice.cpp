@@ -3,13 +3,13 @@
 
 #include "InternalDevice.h"
 
-void InternalDevice::setTimer() {
+/*void InternalDevice::setTimer() {
 
-}
+}*/
 
 InternalDevice::InternalDevice() {
     myTimer = Timer::getInstance();
-    this->doinIt = 0;
+    this->doinIt = false;
     this->zeiteinheit = 0;
 }
 
