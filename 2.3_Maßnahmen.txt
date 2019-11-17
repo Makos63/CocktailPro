@@ -8,3 +8,6 @@ commented out method "setTimer" for maybe later use
 
 ******************* MischbaresRezept.cpp ******************* 
 made constructor explicit
+
+******************* Entleerer.h/cpp *******************
+changed name of second value into valueInput
