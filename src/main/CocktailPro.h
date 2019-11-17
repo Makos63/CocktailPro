@@ -73,6 +73,7 @@ class CocktailPro {
     * @param turbo similar to main(argc*, argv**),
     */
     CocktailPro(int argc, char * * turbo);
+    /*CocktailPro(const CocktailPro &org);*/
 
 
   /**

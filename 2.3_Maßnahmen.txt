@@ -11,3 +11,9 @@ made constructor explicit
 
 ******************* Entleerer.h/cpp *******************
 changed name of second value into valueInput
+
+******************* Waage.h/cpp *******************
+changed variables names, added constructors
+
+******************* Recipe.h/cpp *******************
+added constructor

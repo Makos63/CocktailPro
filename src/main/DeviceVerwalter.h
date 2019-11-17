@@ -37,7 +37,7 @@ public:
    * Constructor for DeviceVerwalter
    * @param ze is the instance which managed all recipes
    */
-    DeviceVerwalter(VorhandeneZutaten * ze);
+  explicit DeviceVerwalter(VorhandeneZutaten * ze);
 /**
  *
  * @param zutat is a string and a name of ingredient

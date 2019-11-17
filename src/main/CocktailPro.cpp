@@ -21,6 +21,16 @@ void CocktailPro::start(){
     }
 }
 
+/*CocktailPro::CocktailPro(const CocktailPro &org) {
+  theZutatenVerwalter = org.theZutatenVerwalter;
+
+  theMischbaresRezeptbuch = org.theMischbaresRezeptbuch;
+  theDeviceVerwalter = org.theDeviceVerwalter;
+  theCocktailZubereiter = org.theCocktailZubereiter;
+  theZutatenVerwalter = org.theZutatenVerwalter;
+
+}*/
+
 CocktailPro::CocktailPro(int argc, char * * param) {
     theZutatenVerwalter = new VorhandeneZutaten;
 
@@ -82,3 +92,4 @@ int CocktailPro::waehle() {
         }
     }
 }
+

@@ -29,7 +29,7 @@ public:
    * @param dv instance of DeviceVerwalter.
    */
 
-    CocktailZubereiter(DeviceVerwalter * dv);
+  explicit CocktailZubereiter(DeviceVerwalter * dv);
 /**
    *@brief logic of mixing a cocktail and control of DeviceVerwalter
    *
