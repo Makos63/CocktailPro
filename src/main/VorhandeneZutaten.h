@@ -42,7 +42,7 @@ class VorhandeneZutaten {
 
     std::string getZutat(int);
 /**
- *@briefit returns the amount of available ingredients
+ *@brief returns the amount of available ingredients
  *@return an interger
  */
 

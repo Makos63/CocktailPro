@@ -25,7 +25,7 @@ public:
  * this functions adds a pointer to an observer to the list.
 */
     void attach(Observer * observer);
-/*
+/**
  *A void function with no returntype taking an argument as parameter
  *@param observer is an Observer pointer.
  *this function  deletes a pointer to an observer from the list of pointers

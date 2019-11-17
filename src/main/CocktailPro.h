@@ -62,7 +62,6 @@ class CocktailPro {
  public:
   /**
    * @brief constructor for @class CocktailPro
-   *
    * gives the exec modes of the CocktailPro, gives the speed of execution slow or fast
    * usage: -D
    * "-D means fast"
@@ -73,10 +72,10 @@ class CocktailPro {
    * @return no return, constructor.
    */
     CocktailPro(int argc, char * * turbo);
+
+
   /**
    * @brief print welcome in the program and starts method weahle() .
-   *
-   * @return no return, void.
    */
     void start();
 
