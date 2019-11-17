@@ -16,6 +16,16 @@
  * Shows welcome text to start of the program,
  * is also responsible for main logic of CocktailPro.
  */
+
+
+/**
+  * @class Cocktailpro
+ *
+ * @brief Manager class which main task is to supervise CocktailZubereiter, DeviceVerwalter, MischbaresRezepbucb, Vorhandenezutaten.
+ *
+ * Shows welcome text to start of the program,
+ * is also responsible for main logic of CocktailPro.
+ */
 class CocktailPro {
  protected:
   /**
