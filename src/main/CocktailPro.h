@@ -1,4 +1,11 @@
 //@(#) CocktailPro.h
+/**
+* @class Cocktailpro
+*
+* @brief Manager class which main task is to supervise CocktailZubereiter, DeviceVerwalter, MischbaresRezepbucb, Vorhandenezutaten
+*
+* Shows welcome text to start of the program, is also responsible for main logic of CocktailPro.
+*/
 
 #ifndef COCKTAILPRO_H_H
 #define COCKTAILPRO_H_H
@@ -8,19 +15,17 @@
 #include "MischbaresRezeptbuch.h"
 #include "CocktailZubereiter.h"
 
-/**
- * @class Cocktailpro
- *
- * @brief Manager class which main task is to supervise CocktailZubereiter, DeviceVerwalter, MischbaresRezepbucb, Vorhandenezutaten.
- *
- * Shows welcome text to start of the program,
- * is also responsible for main logic of CocktailPro.
- */
+
+
+
+
+
 class CocktailPro {
  protected:
-  /**
-   * protected variables to another parts of the program
-   */
+  /** @defgroup CocktailProMain Manager
+ *  This is are instances of another parts of the program
+ *  @{
+ */
   /**
    * Singelton pattern of CocktailZubereiter
    */
@@ -37,6 +42,8 @@ class CocktailPro {
    * Singelton pattern of VorhandeneZutaten
    */
     VorhandeneZutaten * theZutatenVerwalter;
+/** @} */
+// end of group1
 
  protected:
   /**
@@ -60,23 +67,17 @@ class CocktailPro {
     void demo();
 
  public:
-  /**
-   * @brief constructor for @class CocktailPro
-   *
-   * gives the exec modes of the CocktailPro, gives the speed of execution slow or fast
-   * usage: -D
-   * "-D means fast"
-   *
-   * @param argc number of arguments,
-   * @param **turbo similar to main(argc*, argv**),
-   *
-   * @return no return, constructor.
-   */
+   /**
+    * @brief constructor for CocktailPro
+    * gives the exec modes of the CocktailPro, gives the speed of execution slow or fast. usage: -D,  "-D means fast"
+    * @param argc number of arguments,
+    * @param turbo similar to main(argc*, argv**),
+    */
     CocktailPro(int argc, char * * turbo);
+
+
   /**
    * @brief print welcome in the program and starts method weahle() .
-   *
-   * @return no return, void.
    */
     void start();
 
