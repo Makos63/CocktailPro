@@ -12,8 +12,8 @@ bool CocktailZubereiter::cocktailZubereiten(Recipe * rzpt) {
     std::cout << "Hallo, ich bin der CocktailZubereiter!" << std::endl
             << "Ich habe Ihre Bestellung: " << rzpt->getName() << " erhalten." << std::endl
             << "Jetzt geht es los!\n" << std::endl;
-	//int i=0; declaration of ‘i’ shadows a previous local [-Wshadow]
-    for (int i = 0; i < rzpt->getNoOfRecipeSteps(); i++) {
+	int i=0; //declaration of ‘i’ shadows a previous local [-Wshadow]
+    for (i = 0; i < rzpt->getNoOfRecipeSteps(); i++) {
         RecipeStep * schritt = rzpt->getRecipeStep(i);
         std::string zutat = schritt->getZutat();
         float menge = schritt->getMenge();
