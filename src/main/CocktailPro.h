@@ -1,4 +1,11 @@
 //@(#) CocktailPro.h
+/**
+* @class Cocktailpro
+*
+* @brief Manager class which main task is to supervise CocktailZubereiter, DeviceVerwalter, MischbaresRezepbucb, Vorhandenezutaten
+*
+* Shows welcome text to start of the program, is also responsible for main logic of CocktailPro.
+*/
 
 #ifndef COCKTAILPRO_H_H
 #define COCKTAILPRO_H_H
@@ -12,13 +19,7 @@
 
 
 
-/**
- * @class Cocktailpro
- *
- * @brief Manager class which main task is to supervise @class CocktailZubereiter, @class DeviceVerwalter, @class MischbaresRezepbucb, @class Vorhandenezutaten
- *
- * Shows welcome text to start of the program, is also responsible for main logic of CocktailPro.
- */
+
 class CocktailPro {
  protected:
   /**
