@@ -44,7 +44,7 @@ void DeviceVerwalter::rezeptSchrittZubereiten(std::string zutat, float menge) {
 
     //std::map<std::string, InternalDevice *>::iterator tmpDevice;
 
-   // tmpDevice = myDevices->find(zutat);
+    //tmpDevice = myDevices->find(zutat);
 
     if (zutat == "Limettenstuecke") {
         // Der Kunde will Limetten ja unbedingt nach Stueck und nicht nach Gewicht abmessen...
