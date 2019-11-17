@@ -2,7 +2,7 @@
 /**
 * @class Cocktailpro
 *
-* @brief Manager class which main task is to supervise @see CocktailZubereiter, @see DeviceVerwalter, @see MischbaresRezepbucb, @see Vorhandenezutaten
+* @brief Manager class which main task is to supervise @see CocktailZubereiter, @see DeviceVerwalter, @see MischbaresRezeptbuch, @see VorhandeneZutaten
 *
 * Shows welcome text to start of the program, is also responsible for main logic of CocktailPro.
 */
