@@ -8,20 +8,14 @@
 #include "MischbaresRezeptbuch.h"
 #include "CocktailZubereiter.h"
 
+
+
+
+
 /**
  * @class Cocktailpro
  *
- * @brief Manager class which main task is to supervise CocktailZubereiter, DeviceVerwalter, MischbaresRezepbucb, Vorhandenezutaten.
- *
- * Shows welcome text to start of the program,
- * is also responsible for main logic of CocktailPro.
- */
-
-
-/**
-  * @class Cocktailpro
- *
- * @brief Manager class which main task is to supervise CocktailZubereiter, DeviceVerwalter, MischbaresRezepbucb, Vorhandenezutaten.
+ * @brief Manager class which main task is to supervise @class CocktailZubereiter, @class DeviceVerwalter, @class MischbaresRezepbucb, @class Vorhandenezutaten.
  *
  * Shows welcome text to start of the program,
  * is also responsible for main logic of CocktailPro.
