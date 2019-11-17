@@ -61,17 +61,17 @@ class RecipeStep {
 
 /**
 * @brief set the name of ingredient
-* @param m_Zutat is a string and a name of ingredient
+* @param zutat is a string and a name of ingredient
 *
-* copy of m_Zutat
+* copy of zutat
 */
     void setZutat(std::string zutat);
 
 /**
 * @brief set amount of ingredient
-* @param m_Menge is a float and amount of the ingredient
+* @param menge is a float and amount of the ingredient
 *
-* copy of m_Menge
+* copy of menge
 */
 
     void setMenge(float menge);
