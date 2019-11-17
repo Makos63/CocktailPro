@@ -25,7 +25,7 @@ public:
    *
    * @param g weight of the substance
    * @param ze amount of time for how long the output has to be enable in s;
-   * @param inhalt the name of the substance
+   * @param i the name of the substance
    * @param wg instance of Waage
    */
     Dosierer(float g, int ze, std::string i, Waage * wg);
