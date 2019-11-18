@@ -30,7 +30,7 @@ public:
  *@param observer is an Observer pointer.
  *this function  deletes a pointer to an observer from the list of pointers
 */
-    void detach(Observer * observer);
+    //void detach(Observer * observer);
 /**
  * a function with no returntype and no arguments.
  * it updates all the pointers to observers and sets them to 0

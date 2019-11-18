@@ -5,10 +5,10 @@
 
 
 
-Dosierer::Dosierer(float g, int ze, std::string i, Waage * wg) : InternalDevice(), inhalt(i), grammProZeit(g), myWaage(wg), gwicht(0.00) {
-    //this->grammProZeit = g;
+Dosierer::Dosierer(float g, int ze, std::string i, Waage * wg) : InternalDevice(), myWaage(wg), gwicht(0.00) {
+    this->grammProZeit = g;
     this->zeiteinheit = ze;
-    //this->inhalt = i;
+    this->inhalt = i;
     //this->myWaage = wg;
     this->myWaage->attach(this);
     //this->gwicht = 0.00;
