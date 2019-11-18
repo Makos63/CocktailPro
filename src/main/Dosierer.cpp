@@ -5,7 +5,7 @@
 
 
 
-Dosierer::Dosierer(float g, int ze, std::string i, Waage * wg) : InternalDevice(), inhalt(i), myWaage(wg), gwicht(0.00) {
+Dosierer::Dosierer(float g, int ze, std::string i, Waage * wg) : InternalDevice(), myWaage(wg), gwicht(0.00), inhalt(i) {
     this->grammProZeit = g;
     this->zeiteinheit = ze;
     //this->inhalt = i;
@@ -40,3 +40,4 @@ void Dosierer::doIt(float gramm) {
 int Dosierer::getStueckProZeit() {
     return this->grammProZeit;
 }
+
