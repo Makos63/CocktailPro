@@ -10,7 +10,7 @@ VorhandeneZutaten::VorhandeneZutaten(void) {
 
 }
 VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz) {
-    this->zutaten = vz.zutaten;
+    this->zutaten = new std::vector<std::string>;
     lesen();
     this->anzahlDosierer = vz.anzahlDosierer;
 
