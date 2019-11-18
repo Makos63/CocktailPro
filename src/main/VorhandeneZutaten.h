@@ -24,6 +24,12 @@ class VorhandeneZutaten {
  *@brief General Constructor of VorhandeneZutaten
 */
     VorhandeneZutaten(void);
+
+/**
+* @brief copy Contructor of VorhandeneZutaten
+*/
+    VorhandeneZutaten(const VorhandeneZutaten &vz);
+
 /**
  *@brief  virtual Destructor of VorhandeneZutaten
 */ 

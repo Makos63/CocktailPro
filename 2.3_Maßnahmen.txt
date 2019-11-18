@@ -22,3 +22,19 @@ added constructor
 changed i++ to ++i for performance improvements
 
 commented out tmpDevice because it is not used yet
+
+******************* Dosierer.cpp *******************
+made initialization list 
+
+set default value for member "inhalt"
+
+******************* RecipeStep.cpp *******************
+made initialization list 
+
+******************* VorhandeneZutaten.h/cpp ******************* 
+commented out "DummyZutatenEinfuegen" for maybe later use
+
+made a copy constructor
+
+******************* Subject.cpp ******************* 
+commented out "detach" for later use

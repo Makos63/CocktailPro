@@ -9,6 +9,13 @@ VorhandeneZutaten::VorhandeneZutaten(void) {
     this->anzahlDosierer = zutaten->size();
 
 }
+VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz) {
+    this->zutaten = vz.zutaten;
+    lesen();
+    this->anzahlDosierer = vz.anzahlDosierer;
+
+}
+
 
 VorhandeneZutaten::~VorhandeneZutaten(void) {
 
