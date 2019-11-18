@@ -22,8 +22,8 @@ class CocktailPro {
  protected:
   /** @defgroup CocktailProMain Manager
  *  This is are instances of another parts of the program
- *  @{
  */
+ /**@{*/
   /**
    * Singelton pattern of CocktailZubereiter
    */
@@ -40,7 +40,7 @@ class CocktailPro {
    * Singelton pattern of VorhandeneZutaten
    */
     VorhandeneZutaten * theZutatenVerwalter;
-/** @} */ // end of group1
+/**@} */ // end of group1
 
  protected:
   /**
