@@ -24,6 +24,12 @@ class VorhandeneZutaten {
  *@brief General Constructor of VorhandeneZutaten
 */
     VorhandeneZutaten(void);
+
+/**
+* @brief copy Contructor of VorhandeneZutaten
+*/
+    VorhandeneZutaten(const VorhandeneZutaten &vz);
+
 /**
  *@brief  virtual Destructor of VorhandeneZutaten
 */ 
@@ -67,13 +73,11 @@ as string variables
     void lesen();
 /**
  *@brief add a number of different zutaten into the list of zutaten
- *@return has no return type  
  */
-    void DummyZutatenEinfuegen();
+    //void DummyZutatenEinfuegen();
 /**
  *@brief reads the given ingredient file
  *@param  has a string-variable as parameter
- *@return void
 */
     virtual void ZutatenDateiEinlesen(std::string);
 

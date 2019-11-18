@@ -7,9 +7,7 @@
  * Konstruktor 
  *  
  */
-RecipeStep::RecipeStep(void) {
-    m_Zutat = "";
-    m_Menge = 0;
+RecipeStep::RecipeStep(void): m_Zutat(""), m_Menge(0) {
 }
 
 RecipeStep::~RecipeStep() {

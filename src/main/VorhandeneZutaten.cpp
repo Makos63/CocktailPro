@@ -9,6 +9,13 @@ VorhandeneZutaten::VorhandeneZutaten(void) {
     this->anzahlDosierer = zutaten->size();
 
 }
+VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz) {
+    this->zutaten = vz.zutaten;
+    lesen();
+    this->anzahlDosierer = vz.anzahlDosierer;
+
+}
+
 
 VorhandeneZutaten::~VorhandeneZutaten(void) {
 
@@ -43,7 +50,7 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
     in.close();
 }
 
-void VorhandeneZutaten::DummyZutatenEinfuegen() {
+/*void VorhandeneZutaten::DummyZutatenEinfuegen() {
     zutaten->push_back("Limettenstuecke");
     zutaten->push_back("Zucker");
     zutaten->push_back("Cointreau");
@@ -56,14 +63,14 @@ void VorhandeneZutaten::DummyZutatenEinfuegen() {
     //    zutaten->push_back("Tequilla");
     //    zutaten->push_back("Gin");
     //    zutaten->push_back("Noilly Prat");
-}
+}*/
 
 void VorhandeneZutaten::lesen() {
     // int einlesen(list<string>* zutaten, std::string FileName)
     // Stream anlegen
 
         if (DEBUG) {
-            DummyZutatenEinfuegen();
+            //DummyZutatenEinfuegen();
         } else {
             ZutatenDateiEinlesen("zutaten.txt");
         }

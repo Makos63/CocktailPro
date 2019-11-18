@@ -34,3 +34,4 @@ int Waage::getWeight() {
 int Waage::getDelta() {
     return deltaweight;
 }
+
