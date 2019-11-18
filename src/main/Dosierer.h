@@ -29,6 +29,7 @@ public:
    * @param wg instance of Waage
    */
     Dosierer(float g, int ze, std::string i, Waage * wg);
+  Dosierer();
   /**
    * @brief check if needed amount has been used, if not than it wont change doinIt to false
    */
