@@ -10,7 +10,8 @@ VorhandeneZutaten::VorhandeneZutaten(void) {
 
 }
 VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz) {
-    this->zutaten = vz.zutaten;
+    //TODO zutaten schould be initialised in lesen()
+    this->zutaten = new std::vector<std::string>;
     lesen();
     this->anzahlDosierer = vz.anzahlDosierer;
 
@@ -18,7 +19,7 @@ VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz) {
 
 
 VorhandeneZutaten::~VorhandeneZutaten(void) {
-
+ //TODO potencial memoryleak
 }
 
 void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
@@ -69,7 +70,8 @@ void VorhandeneZutaten::lesen() {
     // int einlesen(list<string>* zutaten, std::string FileName)
     // Stream anlegen
 
-        if (DEBUG) {
+        if (DEBUG) {//TODO  this part should be rewritten with define makros etc, using this code fragment should be based on compiler option. looks like pseudo unit-test
+
             //DummyZutatenEinfuegen();
         } else {
             ZutatenDateiEinlesen("zutaten.txt");
