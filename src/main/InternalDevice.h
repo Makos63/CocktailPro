@@ -42,7 +42,7 @@ public:
 	*	sets doinIt to 0 / false
 	*/
     InternalDevice();
-    InternalDevice(bool dointIt_new = false,int zeiteinheit_new = 0);
+    /*InternalDevice(int zeiteinheit_new = 0);*/
 protected:
 	/**
 	*	saves the amound of time (probably in seconds).
