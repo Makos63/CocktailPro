@@ -37,4 +37,4 @@ commented out "DummyZutatenEinfuegen" for maybe later use
 made a copy constructor
 
 ******************* Subject.cpp ******************* 
-commented out "detach" for later use
+commented out "detach" for later use, if we want to delete the pointer to an observer

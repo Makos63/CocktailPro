@@ -27,10 +27,11 @@ public:
     void attach(Observer * observer);
 /**
  *A void function with no returntype taking an argument as parameter
- *@param observer is an Observer pointer.
+ * (@)param observer is an Observer pointer.
  *this function  deletes a pointer to an observer from the list of pointers
 */
     //void detach(Observer * observer);
+
 /**
  * a function with no returntype and no arguments.
  * it updates all the pointers to observers and sets them to 0
