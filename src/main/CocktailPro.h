@@ -7,6 +7,7 @@
 * Shows welcome text to start of the program, is also responsible for main logic of CocktailPro.
 */
 
+
 #ifndef COCKTAILPRO_H_H
 #define COCKTAILPRO_H_H
 
@@ -15,17 +16,21 @@
 #include "MischbaresRezeptbuch.h"
 #include "CocktailZubereiter.h"
 
-
-
-
+/**
+* @class Cocktailpro
+*
+* @brief Manager class which main task is to supervise @see CocktailZubereiter, @see DeviceVerwalter, @see MischbaresRezeptbuch, @see VorhandeneZutaten
+*
+* Shows welcome text to start of the program, is also responsible for main logic of CocktailPro.
+*/
 
 
 class CocktailPro {
  protected:
   /** @defgroup CocktailProMain Manager
  *  This is are instances of another parts of the program
- *  @{
  */
+ /**@{*/
   /**
    * Singelton pattern of CocktailZubereiter
    */
@@ -42,7 +47,7 @@ class CocktailPro {
    * Singelton pattern of VorhandeneZutaten
    */
     VorhandeneZutaten * theZutatenVerwalter;
-/** @} */ // end of group1
+/**@} */ // end of group1
 
  protected:
   /**
