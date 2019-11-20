@@ -10,7 +10,7 @@
 #include "CocktailZubereiter.h"
 
 /**
-* @class Cocktailpro
+* @class CocktailPro
 *
 * @brief Manager class which main task is to supervise @see CocktailZubereiter, @see DeviceVerwalter, @see MischbaresRezeptbuch, @see VorhandeneZutaten
 *
