@@ -12,58 +12,28 @@
 
 RecipeBook::RecipeBook(void) {
   m_Recipe.clear();
+  std::string fileName = "Rezepte.csv";
+
+   try {
+     std::ifstream in;
 
 
-  std::ifstream in;
 
-  std::string FileName = "Rezepte.csv";
-
-  in.open(FileName.c_str(), std::ios::in);
-
-  if (!in) {
-    createBackupRecipes();
-
-  } else {
-
-    std::string zeile;
-
-
-    getline(in, zeile);
-
-
-    while (getline(in, zeile)) {
-
-      std::istringstream inputString(zeile);
-      std::string Name;
-      std::string Zutat;
-      std::string tempstring;
-      float Menge;
-
-      Recipe *r1;
-
-      r1 = new Recipe;
-
-
-      getline(inputString, Name, ';');
-
-      r1->setName(Name);
-
-
-      while (getline(inputString, Zutat, ';') && !Zutat.empty()) {
-
-        if (getline(inputString, tempstring, ';')) {
-          std::istringstream(tempstring) >> Menge;
-        }
-        r1->appendStep(Zutat, Menge);
-
-      }
-      this->m_Recipe.push_back(r1);
-    }
-
-
-    in.close();
-  }
+     in.open(fileName.c_str(), std::ios::in);
+     if(!in){
+       throw "File Rezepte.csv could not be found or opened..";
+     }
+     readFile(in);
+   }catch(const char* e){
+     std::cout <<e<<std::endl;
+     std::cout <<"creating backup recipes..."<<std::endl;
+     createBackupRecipes();
+   }
+   catch(...){
+     std::cout<<"sth went really wrong.."<<std::endl;
+   }
 }
+
 
 RecipeBook::~RecipeBook() {
   m_Recipe.clear();
@@ -171,4 +141,40 @@ void RecipeBook::createBackupRecipes() {
   r1->appendStep("Noilly Prat", 1);
   r1->appendStep("Schuetteln", 10);
   this->m_Recipe.push_back(r1);
+}
+void RecipeBook::readFile(std::ifstream &in) {
+
+
+  std::string zeile;
+  getline(in, zeile);
+
+
+  while (getline(in, zeile)) {
+
+    std::istringstream inputString(zeile);
+    std::string Name, Zutat, tempstring;
+
+    float Menge;
+
+    Recipe *r1;
+
+    r1 = new Recipe;
+
+
+    getline(inputString, Name, ';');
+
+    r1->setName(Name);
+
+
+    while (getline(inputString, Zutat, ';') && !Zutat.empty()) {
+
+      if (getline(inputString, tempstring, ';')) {
+        std::istringstream(tempstring) >> Menge;
+      }
+      r1->appendStep(Zutat, Menge);
+
+    }
+    this->m_Recipe.push_back(r1);
+  }
+  in.close();
 }
