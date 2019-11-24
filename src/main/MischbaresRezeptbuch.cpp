@@ -53,16 +53,21 @@ void MischbaresRezeptbuch::loeschen() {
 }
 bool MischbaresRezeptbuch::gesuchteZutatenExists(const std::string &gesuchteZutat) const {
   bool ok = true;
-  bool z_ok = false;
+  bool z_ok;
 
+  z_ok = gesuchteZutatExists(gesuchteZutat);
+  if (!z_ok) {
+    ok = false;
+  }
+  return ok;
+}
+bool MischbaresRezeptbuch::gesuchteZutatExists(const std::string &gesuchteZutat) const {
+  bool z_ok;
   for (int k = 0; k < myZutatenVerwalter->getAnzahlVorhandeneZutaten(); k++) {
       if (myZutatenVerwalter->getZutat(k) == gesuchteZutat) {
         z_ok = true;
           break;
       }
   }
-  if (!z_ok) {
-    ok = false;
-  }
-  return ok;
+  return z_ok;
 }
