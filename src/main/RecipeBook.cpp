@@ -15,7 +15,15 @@ RecipeBook::RecipeBook(void) {
   std::string fileName = "Rezepte.csv";
 
    try {
-     readFile(fileName);
+     std::ifstream in;
+
+
+
+     in.open(fileName.c_str(), std::ios::in);
+     if(!in){
+       throw "File Rezepte.csv could not be found or opened..";
+     }
+     readFile(in);
    }catch(const char* e){
      std::cout <<e<<std::endl;
      std::cout <<"creating backup recipes..."<<std::endl;
@@ -134,17 +142,10 @@ void RecipeBook::createBackupRecipes() {
   r1->appendStep("Schuetteln", 10);
   this->m_Recipe.push_back(r1);
 }
-void RecipeBook::readFile(const std::string &fileName) {
-  std::ifstream in;
+void RecipeBook::readFile(std::ifstream &in) {
+
+
   std::string zeile;
-
-
-  in.open(fileName.c_str(), std::ios::in);
-  if(!in){
-    throw "File Rezepte.csv could not be found or opened..";
-  }
-
-
   getline(in, zeile);
 
 

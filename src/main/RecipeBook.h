@@ -83,7 +83,7 @@ class RecipeBook {
  * string,string,float
  * @param filename file to be read
  */
-  void readFile(const std::string &filename);
+  void readFile(std::ifstream &in);
 };
 
 #endif
