@@ -79,17 +79,21 @@ int CocktailPro::waehle() {
         int zahl = atoi(eingabe.c_str());
         int max = theMischbaresRezeptbuch->getNumberOfRecipes();
 
-        if (zahl == -1) {
-            exit(0);
-        }
+      return checkSelect(eingabe, zahl, max);
 
-        if (zahl > 0 && zahl <= max) {
-            return zahl;
-        } else {
-            //std::system("clear");
-            std::cout << "MEEEP! Too many fingers on keyboard error!" << std::endl;
-            std::cout << "Ihre Eingabe: " << eingabe << " war nicht zwischen 1 und " << max << "!" << std::endl;
-        }
     }
+}
+int CocktailPro::checkSelect(const std::string &eingabe, int zahl, int max) const {
+  if (zahl == -1) {
+      exit(0);
+  }
+
+  if (zahl > 0 && zahl <= max) {
+      return zahl;
+  } else {
+      //std::system("clear");
+      std::cout << "MEEEP! Too many fingers on keyboard error!" << std::endl;
+      std::cout << "Ihre Eingabe: " << eingabe << " war nicht zwischen 1 und " << max << "!" << std::endl;
+  }
 }
 
