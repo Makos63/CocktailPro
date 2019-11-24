@@ -54,7 +54,7 @@ void MischbaresRezeptbuch::loeschen() {
 bool MischbaresRezeptbuch::gesuchteZutatenExists(const std::string &gesuchteZutat) const {
   bool ok = true;
   bool z_ok;
-//todo that can be fixed
+//todo that can be probably deleted
   z_ok = gesuchteZutatExists(gesuchteZutat);
   if (!z_ok) {
     ok = false;

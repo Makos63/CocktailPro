@@ -49,7 +49,7 @@ class CocktailPro {
    * Singelton pattern of VorhandeneZutaten
    */
     VorhandeneZutaten * theZutatenVerwalter;
-/**@} */ // end of group1
+/**@} */ 
 
  protected:
   /**
@@ -73,9 +73,10 @@ class CocktailPro {
     void demo();
 
  public:
+  //TODO change description of debug mode
    /**
     * @brief constructor for CocktailPro
-    * gives the exec modes of the CocktailPro, gives the speed of execution slow or fast. usage: -D,  "-D means fast"
+    * gives the exec modes of the CocktailPro, -d Debug
     * @param argc number of arguments,
     * @param turbo similar to main(argc*, argv**),
     */
