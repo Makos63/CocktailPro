@@ -17,7 +17,7 @@
 #include "CocktailZubereiter.h"
 
 /**
-* @class Cocktailpro
+* @class CocktailPro
 *
 * @brief Manager class which main task is to supervise @see CocktailZubereiter, @see DeviceVerwalter, @see MischbaresRezeptbuch, @see VorhandeneZutaten
 *
@@ -86,7 +86,14 @@ class CocktailPro {
    */
     void start();
 
-
+/**
+   * @brief gets the Input from waehle() and checks, if it is valid
+   *
+   * @param eingabe input string,
+   * @param zahl number of input,
+   * @param max max numbre of recipies possible,
+   */
+  int checkSelect(const std::string &eingabe, int zahl, int max) const;
 };
 
 #endif
