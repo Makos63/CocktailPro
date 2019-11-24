@@ -69,9 +69,11 @@ class RecipeBook {
   * For values of i that are invalid (i <0 or i>=n) the function return false.
   */
   bool deleteRecipe(unsigned int i);
-/** @brief creates backup Recipes
- * when no file to read will be found this will be used instead
- */
+
+  /** @brief creates backup Recipes
+  * When no file to read will be found this will be used instead.
+  * It is better to use a file!
+  */
   void createBackupRecipes();
 };
 
