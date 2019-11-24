@@ -10,6 +10,8 @@
 
 #include <list>
 #include <string>
+#include <exception>
+
 
 #include "Recipe.h"
 
@@ -75,6 +77,13 @@ class RecipeBook {
   * It is better to use a file!
   */
   void createBackupRecipes();
+/**@brief will read csv file format
+ * supported format:
+ * <recipeName>;<zutatName>;<menge>
+ * string;string;float
+ * @param filename file to be read
+ */
+  void readFile(const std::string filename);
 };
 
 #endif
