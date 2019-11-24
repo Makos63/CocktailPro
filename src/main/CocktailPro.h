@@ -80,6 +80,12 @@ class CocktailPro {
     * @param turbo similar to main(argc*, argv**),
     */
     CocktailPro(int argc, char * * turbo);
+
+  /**
+ * @brief copy constructor for CocktailPro
+ *
+ * @param &org copy of CocktailPro
+ */
     CocktailPro(const CocktailPro &org);
 
 
