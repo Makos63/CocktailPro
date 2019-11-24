@@ -94,7 +94,6 @@ private:
  *  Initializes all devices and add them into map myDevices
  */
     void createDevices();
-
 };
 
 #endif
