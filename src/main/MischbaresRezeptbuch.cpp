@@ -35,39 +35,34 @@ void MischbaresRezeptbuch::setZutatenVerwalter(VorhandeneZutaten * zv) {
 }
 
 void MischbaresRezeptbuch::loeschen() {
-    for (int i = 0; i<this->getNumberOfRecipes(); i++) {
-        bool ok;
-        Recipe* r = getRecipe(i);
-      ok = true;
-        for (int j = 0; j < r->getNoOfRecipeSteps(); j++) {
-            std::string gesuchteZutat;
+  for (int i = 0; i < this->getNumberOfRecipes(); i++) {
+    bool ok;
+    Recipe* r = getRecipe(i);
+    ok = true;
+    for (int j = 0; j < r->getNoOfRecipeSteps(); j++) {
+      std::string gesuchteZutat;
 
-            gesuchteZutat = r->getRecipeStep(j)->getZutat();
-          ok = gesuchteZutatenExists(gesuchteZutat);
+      gesuchteZutat = r->getRecipeStep(j)->getZutat();
+      bool z_ok = false;
 
-        }
-        if (!ok) {
-            deleteRecipe(i);
-        }
-    }
-}
-bool MischbaresRezeptbuch::gesuchteZutatenExists(const std::string &gesuchteZutat) const {
-  bool ok = true;
-  bool z_ok;
-//todo that can be probably deleted
-  z_ok = gesuchteZutatExists(gesuchteZutat);
-  if (!z_ok) {
-    ok = false;
-  }
-  return ok;
-}
-bool MischbaresRezeptbuch::gesuchteZutatExists(const std::string &gesuchteZutat) const {
-  bool z_ok;
-  for (int k = 0; k < myZutatenVerwalter->getAnzahlVorhandeneZutaten(); k++) {
-      if (myZutatenVerwalter->getZutat(k) == gesuchteZutat) {
-        z_ok = true;
-          break;
+      z_ok = boolZutatenCheck(gesuchteZutat);
+
+      if (!z_ok) {
+        ok = false;
       }
+    }
+    if (!ok) {
+      deleteRecipe(i);
+      --i;
+    }
   }
-  return z_ok;
+}
+
+bool MischbaresRezeptbuch::boolZutatenCheck(const std::string &gesuchteZutat) const {
+  for (int k = 0; k < myZutatenVerwalter->getAnzahlVorhandeneZutaten(); k++) {
+    if (myZutatenVerwalter->getZutat(k) == gesuchteZutat) {
+      return true;
+    }
+  }
+  return false;
 }

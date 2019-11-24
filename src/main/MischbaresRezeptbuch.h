@@ -81,7 +81,7 @@ private:
  * look thru the lists of the cocktails ingredient and get recipe steps
  * @return give
  */
-  bool gesuchteZutatenExists(const std::string &gesuchteZutat) const;
+
   /**
    *
    * @param gesuchteZutat name of the ingredient
@@ -89,7 +89,7 @@ private:
    * see @ref VorhandeneZutaten and getZutat()
    * @return
    */
-  bool gesuchteZutatExists(const std::string &gesuchteZutat) const;
+  bool boolZutatenCheck(const std::string &gesuchteZutat) const;
 };
 
 #endif
