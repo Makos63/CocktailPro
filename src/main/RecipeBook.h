@@ -75,7 +75,12 @@ class RecipeBook {
  * when no file to read will be found this will be used instead
  */
   void createBackupRecipes();
-
+/**@brief will read csv file format
+ * supported format:
+ * <recipeName>;<zutatName>;<menge>
+ * string;string;float
+ * @param filename file to be read
+ */
   void readFile(const std::string filename);
 };
 
