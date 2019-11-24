@@ -10,6 +10,8 @@
 
 #include <list>
 #include <string>
+#include <exception>
+
 
 #include "Recipe.h"
 
@@ -73,6 +75,8 @@ class RecipeBook {
  * when no file to read will be found this will be used instead
  */
   void createBackupRecipes();
+
+  void readFile(const std::string filename);
 };
 
 #endif
