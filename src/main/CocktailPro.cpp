@@ -94,6 +94,8 @@ int CocktailPro::checkSelect(const std::string &eingabe, int zahl, int max) cons
       //std::system("clear");
       std::cout << "MEEEP! Too many fingers on keyboard error!" << std::endl;
       std::cout << "Ihre Eingabe: " << eingabe << " war nicht zwischen 1 und " << max << "!" << std::endl;
+
   }
+  return 0;
 }
 
