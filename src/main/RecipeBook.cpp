@@ -134,7 +134,7 @@ void RecipeBook::createBackupRecipes() {
   r1->appendStep("Schuetteln", 10);
   this->m_Recipe.push_back(r1);
 }
-void RecipeBook::readFile(const std::string fileName) {
+void RecipeBook::readFile(const std::string &fileName) {
   std::ifstream in;
   std::string zeile;
 
