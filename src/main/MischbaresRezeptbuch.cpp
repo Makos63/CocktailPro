@@ -43,7 +43,7 @@ void MischbaresRezeptbuch::loeschen() {
             std::string gesuchteZutat;
 
             gesuchteZutat = r->getRecipeStep(j)->getZutat();
-          ok = gesuchteZutatenExists(gesuchteZutat);
+          ok = gesuchteZutatExists(gesuchteZutat);
 
         }
         if (!ok) {

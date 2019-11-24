@@ -81,7 +81,7 @@ class RecipeBook {
  * supported format:
  * recipeName,zutatName,menge
  * string,string,float
- * @param filename file to be read
+ * @param in file to be read
  */
   void readFile(std::ifstream &in);
 };
