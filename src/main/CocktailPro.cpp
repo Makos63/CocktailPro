@@ -22,28 +22,16 @@ void CocktailPro::start(){
 }
 
 CocktailPro::CocktailPro(const CocktailPro &org) {
-  theZutatenVerwalter = org.theZutatenVerwalter;
+  theZutatenVerwalter = new VorhandeneZutaten(*org.theZutatenVerwalter);
 
-  theMischbaresRezeptbuch = org.theMischbaresRezeptbuch;
-  theDeviceVerwalter = org.theDeviceVerwalter;
-  theCocktailZubereiter = org.theCocktailZubereiter;
-  theZutatenVerwalter = org.theZutatenVerwalter;
+  theMischbaresRezeptbuch = new MischbaresRezeptbuch(*org.theMischbaresRezeptbuch);
+  theDeviceVerwalter = new DeviceVerwalter(*org.theDeviceVerwalter);
+  theCocktailZubereiter = new CocktailZubereiter(*org.theCocktailZubereiter);
 
-  Timer * theTimer = Timer::getInstance();
-  //todo need to write getters!
-/*  if (org. == 2) {// this has to be changed later
-    if (std::string(param[1]) == "-D") {
-      theTimer->set_Turbo(1000);
-      this->demo();
-      exit(0);
-    } else { // Parameter => Turbo an
-      theTimer->set_Turbo(10);
-    }
-  }*/
 }
 
 CocktailPro::CocktailPro(int argc, char * * param) {
-    theZutatenVerwalter = new VorhandeneZutaten;
+    //theZutatenVerwalter = new VorhandeneZutaten();
 
     theMischbaresRezeptbuch = new MischbaresRezeptbuch(theZutatenVerwalter);
     theDeviceVerwalter = new DeviceVerwalter(theZutatenVerwalter);
@@ -108,4 +96,5 @@ int CocktailPro::checkSelect(const std::string &eingabe, int zahl, int max) cons
   }
   return 0;
 }
+
 

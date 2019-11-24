@@ -35,6 +35,8 @@ class CocktailPro {
    * Singelton pattern of CocktailZubereiter
    */
     CocktailZubereiter * theCocktailZubereiter;
+
+ protected:
   /**
    * Singelton pattern of DeviceVerwalter
    */
