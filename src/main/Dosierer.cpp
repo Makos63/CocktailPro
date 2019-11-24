@@ -15,9 +15,9 @@ Dosierer::Dosierer(float g, int ze, std::string i, Waage * wg) : InternalDevice(
 }
 
 void Dosierer::update() {
-    if (!this->doinIt) return;
+    if (!this->outputEnable) return;
     if (myWaage->getDelta() >= gwicht) {
-        doinIt = false;
+      outputEnable = false;
     }
 
 }
@@ -25,9 +25,9 @@ void Dosierer::update() {
 void Dosierer::doIt(float gramm) {
     this->gwicht = gramm;
     myWaage->tara();
-    doinIt = true;
+  outputEnable = true;
     std::cout << inhalt << " Ventil wurde geoeffnet" << std::endl;
-    while (doinIt) {
+    while (outputEnable) {
         myTimer->sleep_in_one_second_intervals(zeiteinheit);
         myWaage->changeWeight(grammProZeit);
         //myWaage->changeWeight(0);

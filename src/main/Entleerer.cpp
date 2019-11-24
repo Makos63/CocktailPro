@@ -18,17 +18,17 @@ Entleerer::~Entleerer(){
 //
 
 void Entleerer::update() {
-    if (!this->doinIt) return;
+    if (!this->outputEnable) return;
     if (myWaage->getWeight() <= this->value)
-        doinIt = 0;
+      outputEnable = 0;
 }
 
 void Entleerer::doIt(float valueInput) {
     std::cout << "Ihr Cocktail hat ein Gesamtgewicht von " << myWaage->getWeight() << "g" << std::endl;
     std::cout << "Entleervorgang wird begonnen..." << std::endl;
     this->value = valueInput;
-    doinIt = 1;
-    while (doinIt) {
+  outputEnable = 1;
+    while (outputEnable) {
         myTimer->sleep_in_one_second_intervals(zeiteinheit);
         myWaage->changeWeight(-grammProZeit);
     }
