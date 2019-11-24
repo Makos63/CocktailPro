@@ -79,8 +79,8 @@ class RecipeBook {
   void createBackupRecipes();
 /**@brief will read csv file format
  * supported format:
- * <recipeName>;<zutatName>;<menge>
- * string;string;float
+ * recipeName,zutatName,menge
+ * string,string,float
  * @param filename file to be read
  */
   void readFile(const std::string &filename);
