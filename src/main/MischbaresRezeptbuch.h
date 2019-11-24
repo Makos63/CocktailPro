@@ -75,19 +75,13 @@ private:
 	*	sets myZutatenVerwalter to VorhandeneZutaten
 	*/
     void setZutatenVerwalter(VorhandeneZutaten * ze);
-/**
- *
- * @param gesuchteZutat name of the ingredient
- * look thru the lists of the cocktails ingredient and get recipe steps
- * @return give
- */
 
   /**
    *
    * @param gesuchteZutat name of the ingredient
    * look thru every ingredient in given recipe and compere with given ingredient name
    * see @ref VorhandeneZutaten and getZutat()
-   * @return
+   * @return bool if found or not
    */
   bool boolZutatenCheck(const std::string &gesuchteZutat) const;
 };
