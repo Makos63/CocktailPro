@@ -74,6 +74,7 @@ private:
 	*/
     void setZutatenVerwalter(VorhandeneZutaten * ze);
 
+  bool gesuchteZutatenExists(const std::string &gesuchteZutat) const;
 };
 
 #endif

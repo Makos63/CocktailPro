@@ -21,7 +21,7 @@ void CocktailPro::start(){
     }
 }
 
-/*CocktailPro::CocktailPro(const CocktailPro &org) {
+CocktailPro::CocktailPro(const CocktailPro &org) {
   theZutatenVerwalter = org.theZutatenVerwalter;
 
   theMischbaresRezeptbuch = org.theMischbaresRezeptbuch;
@@ -29,7 +29,18 @@ void CocktailPro::start(){
   theCocktailZubereiter = org.theCocktailZubereiter;
   theZutatenVerwalter = org.theZutatenVerwalter;
 
-}*/
+  Timer * theTimer = Timer::getInstance();
+  //todo need to write getters!
+/*  if (org. == 2) {// this has to be changed later
+    if (std::string(param[1]) == "-D") {
+      theTimer->set_Turbo(1000);
+      this->demo();
+      exit(0);
+    } else { // Parameter => Turbo an
+      theTimer->set_Turbo(10);
+    }
+  }*/
+}
 
 CocktailPro::CocktailPro(int argc, char * * param) {
     theZutatenVerwalter = new VorhandeneZutaten;

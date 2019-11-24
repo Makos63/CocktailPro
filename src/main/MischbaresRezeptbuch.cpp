@@ -43,20 +43,26 @@ void MischbaresRezeptbuch::loeschen() {
             std::string gesuchteZutat;
 
             gesuchteZutat = r->getRecipeStep(j)->getZutat();
-            bool z_ok = false;
+          ok = gesuchteZutatenExists(gesuchteZutat);
 
-            for (int k = 0; k < myZutatenVerwalter->getAnzahlVorhandeneZutaten(); k++) {
-                if (myZutatenVerwalter->getZutat(k) == gesuchteZutat) {
-                  z_ok = true;
-                    break;
-                }
-            }
-            if (!z_ok) {
-              ok = false;
-            }
         }
         if (!ok) {
             deleteRecipe(i);
         }
     }
+}
+bool MischbaresRezeptbuch::gesuchteZutatenExists(const std::string &gesuchteZutat) const {
+  bool ok = true;
+  bool z_ok = false;
+
+  for (int k = 0; k < myZutatenVerwalter->getAnzahlVorhandeneZutaten(); k++) {
+      if (myZutatenVerwalter->getZutat(k) == gesuchteZutat) {
+        z_ok = true;
+          break;
+      }
+  }
+  if (!z_ok) {
+    ok = false;
+  }
+  return ok;
 }
