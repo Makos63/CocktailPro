@@ -32,7 +32,10 @@ public:
 	*	Sleeps for n-seconds and prints an endline.
 	*/
     void doIt(float time);
-
+/**
+* a static constant interger variable for time increase
+*/
+    static const  int FACTOR = 1000;
 private:
 
 };

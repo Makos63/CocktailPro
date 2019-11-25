@@ -6,25 +6,25 @@
 
 Waage::Waage(){
   weight = 0;
-  deltaweight =0;
+  deltaWeight =0;
 }
 
 
 Waage::Waage(const Waage &org){
   this->weight = org.weight;
-  this->deltaweight = org.deltaweight;
+  this->deltaWeight = org.deltaWeight;
 }
 
 void Waage::changeWeight(int v) {
     weight += v;
     if (weight < 0)
         weight = 0;
-    deltaweight += v;
+    deltaWeight += v;
     notify();
 }
 
 int Waage::tara() {
-    return deltaweight = 0;
+    return deltaWeight = 0;
 }
 
 int Waage::getWeight() {
@@ -32,6 +32,6 @@ int Waage::getWeight() {
 }
 
 int Waage::getDelta() {
-    return deltaweight;
+    return deltaWeight;
 }
 

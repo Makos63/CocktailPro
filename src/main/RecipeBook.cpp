@@ -11,7 +11,7 @@
 #include "RecipeBook.h"
 
 RecipeBook::RecipeBook(void) {
-    m_Recipe.clear();
+    mRecipe.clear();
     
        // Stream anlegen
     std::ifstream in;
@@ -31,7 +31,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Eis", 90);
     r1->appendStep("Cachaca", 5);
     r1->appendStep("Mischen", 10);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
 
     r1 = new Recipe;
     r1->setName("Margarita");
@@ -40,7 +40,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Tequilla", 4);
     r1->appendStep("Eis", 50);
     r1->appendStep("Mischen", 20);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
 
     r1 = new Recipe;
     r1->setName("Daiquiri");
@@ -49,7 +49,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Rum weiss", 5);
     r1->appendStep("Eis", 50);
     r1->appendStep("Mischen", 20);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
 
     r1 = new Recipe;
     r1->setName("Planters Punch");
@@ -59,7 +59,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Rum braun", 6);
     r1->appendStep("Eis", 100);
     r1->appendStep("Mischen", 20);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
 
     r1 = new Recipe;
     r1->setName("Caipiroska");
@@ -69,7 +69,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Eis", 90);
     r1->appendStep("Wodka", 5);
     r1->appendStep("Mischen", 10);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
 
     r1 = new Recipe;
     r1->setName("Caipirissima");
@@ -79,7 +79,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Eis", 90);
     r1->appendStep("Rum weiss", 5);
     r1->appendStep("Mischen", 10);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
 
     r1 = new Recipe;
     r1->setName("Cuban Island");
@@ -89,7 +89,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Wodka", 2);
     r1->appendStep("Eis", 30);
     r1->appendStep("Mischen", 30);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
 
 
     r1 = new Recipe;
@@ -98,7 +98,7 @@ RecipeBook::RecipeBook(void) {
     r1->appendStep("Wodka", 2);
     r1->appendStep("Noilly Prat", 1);
     r1->appendStep("Schuetteln", 10);
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
     // cout << m_Liste->size() << endl;
         
         
@@ -115,30 +115,30 @@ RecipeBook::RecipeBook(void) {
         while (getline(in, zeile)) {
             //      cout << zeile << endl;
                 std::istringstream inputString(zeile);
-    std::string Name;
-    std::string Zutat;
-    std::string tempstring;
-    float Menge;
+    std::string name;
+    std::string zutat;
+    std::string tempString;
+    float menge;
 
     Recipe* r1;
 
     r1 = new Recipe;
 
     // Aus istringstream Name einlesen mit Komma als Trennzeichen
-    getline(inputString, Name, ';');
+    getline(inputString, name, ';');
     // Weiter einlesen bis zum naechsten Trennzeichen (Zutat)
-    r1->setName(Name);
+    r1->setName(name);
     //cout << "Name: " << Name << endl;
 
-    while (getline(inputString, Zutat, ';')&& !Zutat.empty()) {
+    while (getline(inputString, zutat, ';')&& !zutat.empty()) {
         // Weiter einlesen bis zum naechsten Trennzeichen (Menge)
-        if (getline(inputString, tempstring, ';')) {
-            std::istringstream(tempstring) >> Menge;
+        if (getline(inputString, tempString, ';')) {
+            std::istringstream(tempString) >> menge;
         }
-        r1->appendStep(Zutat, Menge);
+        r1->appendStep(zutat, menge);
         //cout << " Zutat: " << Zutat << " Menge: " << Menge << "\n" << endl;
     }
-    this->m_Recipe.push_back(r1);
+    this->mRecipe.push_back(r1);
         }
 
         /* Datei wieder schliessen */
@@ -147,29 +147,29 @@ RecipeBook::RecipeBook(void) {
 }
 
 RecipeBook::~RecipeBook() {
-   m_Recipe.clear();
+   mRecipe.clear();
 }
 
 int RecipeBook::getNumberOfRecipes() {
-    return (m_Recipe.size());
+    return (mRecipe.size());
 }
 
 Recipe * RecipeBook::getRecipe(unsigned int i) {
-    if (i > m_Recipe.size()) return NULL;
+    if (i > mRecipe.size()) return NULL;
     else {
         std::list<Recipe*>::iterator p; // Iterator
-        advance(p = m_Recipe.begin(), i); // p zeigt jetzt auf das i-te Element
+        advance(p = mRecipe.begin(), i); // p zeigt jetzt auf das i-te Element
         return *p; // Wert von p - also den Pointer zurueck
     }
 }
 
 bool RecipeBook::deleteRecipe(unsigned int i) {
-    if (i >= m_Recipe.size()) {
+    if (i >= mRecipe.size()) {
         return false;
     } else {
         std::list<Recipe*>::iterator p; // Iterator
-        advance(p = m_Recipe.begin(), i); // now p points to the i-th Element
-        m_Recipe.erase(p); // delete the element p is pointing to
+        advance(p = mRecipe.begin(), i); // now p points to the i-th Element
+        mRecipe.erase(p); // delete the element p is pointing to
         return true; // Success!
     }
 }

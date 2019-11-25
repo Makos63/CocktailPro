@@ -28,7 +28,7 @@ class Timer {
  *@return  it has no return type
  */
  
-    void set_Turbo(int turbo);
+    void setTurbo(int turbo);
 /**
  *@brief function used to implement single ton pattern,returns the only 
 instance of time
@@ -49,13 +49,13 @@ instance of time
  *@param milliseconds the total amount of time to wait  in milliseconds.
  *@return  it has no return type
  */
-    void sleep_in_one_second_intervals(long milliseconds);
+    void sleepInOneSecondIntervals(long milliseconds);
 /**
  *@brief controls the waiting time, without outputting anything to screen.
  *@param delay_in_ms  delaying time in milliseconds.
  *@return has no return type
  */ 
-    void sleep(long delay_in_ms);
+    void sleep(long delayInMs);
 
 
  private:

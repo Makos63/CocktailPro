@@ -95,6 +95,6 @@ as string variables
  * a static string variable  holding the name of the file
 */
 
-static std::string FileName;
+static std::string fileName;
 
 #endif

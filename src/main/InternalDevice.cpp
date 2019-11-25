@@ -10,7 +10,7 @@
 InternalDevice::InternalDevice() {
     myTimer = Timer::getInstance();
     this->doinIt = false;
-    this->zeiteinheit = 0;
+    this->zeitEinheit = 0;
 }
 
 /*InternalDevice::InternalDevice(int zeiteinheit_new)
