@@ -21,13 +21,13 @@ private:
 * this is the list of RecipeStep
 */
 
-    std::list<RecipeStep*> m_RecipeStep;
+    std::list<RecipeStep*> mRecipeStep;
 
 /**
 * this is the name of the Recipe
 */
 
-    std::string m_Name;
+    std::string mName;
 
 public:
 

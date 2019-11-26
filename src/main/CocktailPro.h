@@ -76,7 +76,10 @@ class CocktailPro {
   //TODO change description of debug mode
    /**
     * @brief constructor for CocktailPro
-    * gives the exec modes of the CocktailPro, -d Debug
+
+    * gives the execution modes of the CocktailPro, gives the speed of execution slow or fast. usage: -D,  "-D means fast"
+
+    * gives the exec modes of the CocktailPro,
     * @param argc number of arguments,
     * @param turbo similar to main(argc*, argv**),
     */

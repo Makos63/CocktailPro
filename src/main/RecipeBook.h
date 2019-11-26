@@ -26,11 +26,14 @@
  *
  */
 class RecipeBook {
-  /**
-  * This is the list of recipes that the RecipeBook manages
-  */
- private:
-  std::list<Recipe *> m_Recipe;
+
+    /**
+    * This is the list of recipes that the RecipeBook manages
+    */
+  private:
+    std::list<Recipe *> mRecipe;
+
+
 
  public:
   /** @brief Construktor that creates a RecipeBook
@@ -42,6 +45,7 @@ class RecipeBook {
   * Initialisierer is destroyed.
   */
   RecipeBook(void);
+
 
   /** @brief Destructor that deletes the RecipeBook
   */

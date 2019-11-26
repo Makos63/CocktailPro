@@ -57,7 +57,7 @@ class Waage : public Subject {
 /**
  *this variable contains the change in weight.
  */
-    int deltaweight;
+    int deltaWeight;
 };
 
 #endif

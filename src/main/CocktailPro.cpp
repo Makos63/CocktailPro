@@ -9,7 +9,7 @@
 
 void CocktailPro::start(){
     while (true) {
-        int CocktailNo = waehle();
+        int CocktailNo= waehle();
         int max = theMischbaresRezeptbuch->getNumberOfRecipes();
         if (CocktailNo > 0 && CocktailNo <= max) {
             Recipe * rezeptptr = theMischbaresRezeptbuch->getRecipe(CocktailNo - 1);
@@ -41,11 +41,11 @@ CocktailPro::CocktailPro(int argc, char * * param) {
     Timer * theTimer = Timer::getInstance();
     if (argc == 2) {// this has to be changed later
         if (std::string(param[1]) == "-D") {
-            theTimer->set_Turbo(1000);
+            theTimer->setTurbo(1000);
             this->demo();
             exit(0);
         } else { // Parameter => Turbo an
-            theTimer->set_Turbo(10);
+            theTimer->setTurbo(10);
         }
     }
     // Mischen

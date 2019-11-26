@@ -7,6 +7,6 @@ Schuettler::Schuettler() : InternalDevice() {
 }
 
 void Schuettler::doIt(float time) {
-    myTimer->sleep_in_one_second_intervals(time * 1000);
+    myTimer->sleepInOneSecondIntervals(time * FACTOR);
     std::cout << std::endl;
 }

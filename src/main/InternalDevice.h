@@ -47,7 +47,7 @@ protected:
 	/**
 	*	saves the amound of time (probably in seconds).
 	*/
-    int zeiteinheit;
+    int zeitEinheit;
 
 	/**
 	*	bool object to see, if output is enabled or not 

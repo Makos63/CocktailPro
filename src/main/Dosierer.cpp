@@ -7,7 +7,7 @@
 
 Dosierer::Dosierer(float g, int ze, std::string i, Waage * wg) : InternalDevice(), myWaage(wg), gwicht(0.00), inhalt(i) {
     this->grammProZeit = g;
-    this->zeiteinheit = ze;
+    this->zeitEinheit = ze;
     //this->inhalt = i;
     //this->myWaage = wg;
     this->myWaage->attach(this);
@@ -27,8 +27,13 @@ void Dosierer::doIt(float gramm) {
     myWaage->tara();
   outputEnable = true;
     std::cout << inhalt << " Ventil wurde geoeffnet" << std::endl;
+
+    while (doinIt) {
+        myTimer->sleepInOneSecondIntervals(zeitEinheit);
+
     while (outputEnable) {
-        myTimer->sleep_in_one_second_intervals(zeiteinheit);
+        myTimer->sleepInOneSecondIntervals(zeitEinheit);
+
         myWaage->changeWeight(grammProZeit);
         //myWaage->changeWeight(0);
     }

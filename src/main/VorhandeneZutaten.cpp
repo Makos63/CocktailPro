@@ -25,18 +25,18 @@ VorhandeneZutaten::~VorhandeneZutaten(void) {
 void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
     std::ifstream in;
 
-    FileName = myfile;
+    fileName = myfile;
 
-    in.open(FileName.c_str(), std::ios::in); // c_str wandelt den String in char[]
+    in.open(fileName.c_str(), std::ios::in); // c_str wandelt den String in char[]
     // das braucht fstream
 
     if (!in) {// File konnte nicht geoeffnet werden
-        std::string my_exception = "File not found: " + FileName;
-        std::cout << my_exception << std::endl;
-        throw my_exception;
+        std::string myException = "File not found: " + fileName;
+        std::cout << myException << std::endl;
+        throw myException;
     }
 
-    std::cout << "Oeffne Zutatendatei " << FileName << std::endl;
+    std::cout << "Oeffne Zutatendatei " << fileName << std::endl;
 
     std::string zeile;
     while (getline(in, zeile)) {

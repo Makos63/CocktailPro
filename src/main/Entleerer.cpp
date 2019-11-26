@@ -5,7 +5,7 @@
 
 Entleerer::Entleerer(float g, int ze, Waage * wg) : InternalDevice() {
     this->grammProZeit = g;
-    this->zeiteinheit = ze;
+    this->zeitEinheit = ze;
     this->myWaage = wg;
     this->myWaage->attach(this);
     this->value = 0.0;
@@ -27,9 +27,15 @@ void Entleerer::doIt(float valueInput) {
     std::cout << "Ihr Cocktail hat ein Gesamtgewicht von " << myWaage->getWeight() << "g" << std::endl;
     std::cout << "Entleervorgang wird begonnen..." << std::endl;
     this->value = valueInput;
+
+    doinIt = 1;
+    while (doinIt) {
+        myTimer->sleepInOneSecondIntervals(zeitEinheit);
+
   outputEnable = 1;
     while (outputEnable) {
-        myTimer->sleep_in_one_second_intervals(zeiteinheit);
+        myTimer->sleepInOneSecondIntervals(zeitEinheit);
+
         myWaage->changeWeight(-grammProZeit);
     }
     std::cout << std::endl;

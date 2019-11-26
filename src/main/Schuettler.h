@@ -27,7 +27,10 @@ public:
 *
 */
     void doIt(float time);
-
+/**
+* a constant static interger variable 
+*/
+static const int FACTOR=1000;
 private:
 };
 

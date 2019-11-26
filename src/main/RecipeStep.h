@@ -20,12 +20,12 @@ class RecipeStep {
 * this is the name of ingredient that RecipeStep manages
 */
 
-    std::string m_Zutat;
+    std::string mZutat;
 
 /**
 *This is amount of ingredient that RecipeStep manages
 */
-    float m_Menge;
+    float mMenge;
 
  public:
 
