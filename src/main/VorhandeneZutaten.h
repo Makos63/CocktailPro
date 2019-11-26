@@ -82,7 +82,7 @@ as string variables
     virtual void ZutatenDateiEinlesen(std::string);
 
 /**
- *@brief adds special ingredients Stampfen und Mischen to the Vector
+ *@brief adds special ingredients Stampfen, Mischen and Schuetteln to the Vector
  *@return  no returntype
  */
     void addSpecial();
