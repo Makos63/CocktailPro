@@ -61,7 +61,9 @@ private:
 	*	@brief	deletes non available recipes
 	*
 	*	iterates through all recipes and checks, if all ingredients are available.
-	*	if not, it deletes it, to reduce size of the vector
+	*	if not, it deletes it, to reduce size of the vector.
+	*	Look thru the lists of the cocktails recipes and get recipe steps and
+	*	calls @ref gesuchteZutatenExists
 	*/
     void loeschen();
 
@@ -74,6 +76,14 @@ private:
 	*/
     void setZutatenVerwalter(VorhandeneZutaten * ze);
 
+  /**
+   *
+   * @param gesuchteZutat name of the ingredient
+   * look thru every ingredient in given recipe and compere with given ingredient name
+   * see @ref VorhandeneZutaten and getZutat()
+   * @return bool if found or not
+   */
+  bool boolZutatenCheck(const std::string &gesuchteZutat) const;
 };
 
 #endif

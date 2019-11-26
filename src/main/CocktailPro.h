@@ -1,4 +1,11 @@
 //@(#) CocktailPro.h
+/**
+* @class CocktailPro
+*
+* @brief Manager class which main task is to supervise @see CocktailZubereiter, @see DeviceVerwalter, @see MischbaresRezeptbuch, @see VorhandeneZutaten
+*
+* Shows welcome text to start of the program, is also responsible for main logic of CocktailPro.
+*/
 
 
 #ifndef COCKTAILPRO_H_H
@@ -28,6 +35,8 @@ class CocktailPro {
    * Singelton pattern of CocktailZubereiter
    */
     CocktailZubereiter * theCocktailZubereiter;
+
+ protected:
   /**
    * Singelton pattern of DeviceVerwalter
    */
@@ -40,7 +49,7 @@ class CocktailPro {
    * Singelton pattern of VorhandeneZutaten
    */
     VorhandeneZutaten * theZutatenVerwalter;
-/**@} */ // end of group1
+/**@} */ 
 
  protected:
   /**
@@ -64,14 +73,24 @@ class CocktailPro {
     void demo();
 
  public:
+  //TODO change description of debug mode
    /**
     * @brief constructor for CocktailPro
+
     * gives the execution modes of the CocktailPro, gives the speed of execution slow or fast. usage: -D,  "-D means fast"
+
+    * gives the exec modes of the CocktailPro,
     * @param argc number of arguments,
     * @param turbo similar to main(argc*, argv**),
     */
     CocktailPro(int argc, char * * turbo);
-    /*CocktailPro(const CocktailPro &org);*/
+
+  /**
+ * @brief copy constructor for CocktailPro
+ *
+ * @param &org copy of CocktailPro
+ */
+    CocktailPro(const CocktailPro &org);
 
 
   /**
@@ -79,7 +98,14 @@ class CocktailPro {
    */
     void start();
 
-
+/**
+   * @brief gets the Input from waehle() and checks, if it is valid
+   *
+   * @param eingabe input string,
+   * @param zahl number of input,
+   * @param max max numbre of recipies possible,
+   */
+  int checkSelect(const std::string &eingabe, int zahl, int max) const;
 };
 
 #endif

@@ -21,23 +21,22 @@ void CocktailPro::start(){
     }
 }
 
-/*CocktailPro::CocktailPro(const CocktailPro &org) {
-  theZutatenVerwalter = org.theZutatenVerwalter;
+CocktailPro::CocktailPro(const CocktailPro &org) {
+  theZutatenVerwalter = new VorhandeneZutaten(*org.theZutatenVerwalter);
 
-  theMischbaresRezeptbuch = org.theMischbaresRezeptbuch;
-  theDeviceVerwalter = org.theDeviceVerwalter;
-  theCocktailZubereiter = org.theCocktailZubereiter;
-  theZutatenVerwalter = org.theZutatenVerwalter;
+  theMischbaresRezeptbuch = new MischbaresRezeptbuch(*org.theMischbaresRezeptbuch);
+  theDeviceVerwalter = new DeviceVerwalter(*org.theDeviceVerwalter);
+  theCocktailZubereiter = new CocktailZubereiter(*org.theCocktailZubereiter);
 
-}*/
+}
 
 CocktailPro::CocktailPro(int argc, char * * param) {
-    theZutatenVerwalter = new VorhandeneZutaten;
+    theZutatenVerwalter = new VorhandeneZutaten();
 
     theMischbaresRezeptbuch = new MischbaresRezeptbuch(theZutatenVerwalter);
     theDeviceVerwalter = new DeviceVerwalter(theZutatenVerwalter);
     theCocktailZubereiter = new CocktailZubereiter(theDeviceVerwalter);
-    theZutatenVerwalter = new VorhandeneZutaten;
+
 
     Timer * theTimer = Timer::getInstance();
     if (argc == 2) {// this has to be changed later
@@ -78,18 +77,24 @@ int CocktailPro::waehle() {
 
         int zahl = atoi(eingabe.c_str());
         int max = theMischbaresRezeptbuch->getNumberOfRecipes();
-
         if (zahl == -1) {
-            exit(0);
+        exit(0);
         }
+      return checkSelect(eingabe, zahl, max);
 
-        if (zahl > 0 && zahl <= max) {
-            return zahl;
-        } else {
-            //std::system("clear");
-            std::cout << "MEEEP! Too many fingers on keyboard error!" << std::endl;
-            std::cout << "Ihre Eingabe: " << eingabe << " war nicht zwischen 1 und " << max << "!" << std::endl;
-        }
     }
 }
+int CocktailPro::checkSelect(const std::string &eingabe, int zahl, int max) const {
+
+  if (zahl > 0 && zahl <= max) {
+      return zahl;
+  } else {
+      //std::system("clear");
+      std::cout << "MEEEP! Too many fingers on keyboard error!" << std::endl;
+      std::cout << "Ihre Eingabe: " << eingabe << " war nicht zwischen 1 und " << max << "!" << std::endl;
+
+  }
+  return 0;
+}
+
 

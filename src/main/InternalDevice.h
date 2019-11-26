@@ -53,7 +53,7 @@ protected:
 	*	bool object to see, if output is enabled or not 
 	*	name is a bit odd but it is super duper important
 	*/
-    bool doinIt;
+    bool outputEnable;
 
 	/**
 	*	Object of the type Timer

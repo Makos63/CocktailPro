@@ -91,10 +91,18 @@ private:
    */
     Waage * theWaage;
 /**
- *  Initializes all devices and add them into map myDevices
+ *  @brief Initializes all devices and add them into map myDevices
+ *
+ *  Initialisation of Waage,
+ *  Initialisation of Entleerer,
+ *  Initialisation of Stampfer,
+ *  Initialisation of Schuettler,
+ *  Initialisation of Mixer
+ *
+ *  Check, if ice or lime is added as ingredient 
+ *
  */
     void createDevices();
-
 };
 
 #endif
