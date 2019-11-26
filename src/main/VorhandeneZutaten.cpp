@@ -93,6 +93,7 @@ void VorhandeneZutaten::browse(void) {
 void VorhandeneZutaten::addSpecial() {
     zutaten->push_back("Mischen");
     zutaten->push_back("Stampfen");
+    zutaten->push_back("Schuetteln");
 }
 
 std::string VorhandeneZutaten::getZutat(int i) {
