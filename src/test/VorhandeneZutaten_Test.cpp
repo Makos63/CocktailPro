@@ -40,7 +40,7 @@ TEST_F(VorhandeneZutatenTest,getAnzahlVorhandeneZutaten)
 }
 
 TEST_F(VorhandeneZutatenTest,FileZutatenDotTxtIsAvailable)
-{
+{1
     // Test redirects the standard cout to another stream (ss)
     // this stream can be read and compared
     // after the test the normal cout is activated again
