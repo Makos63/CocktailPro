@@ -34,7 +34,8 @@ void MischbaresRezeptbuch::setZutatenVerwalter(VorhandeneZutaten * zv) {
     myZutatenVerwalter = zv;
 }
 
-void MischbaresRezeptbuch::loeschen() {
+void MischbaresRezeptbuch::loeschen() {                         //besser dekrementieren
+// int i = getnumberofrecipies-1; i > 0 ;i--)
   for (int i = 0; i < this->getNumberOfRecipes(); i++) {
     bool ok;
     Recipe* r = getRecipe(i);

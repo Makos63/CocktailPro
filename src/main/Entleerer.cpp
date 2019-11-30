@@ -35,5 +35,4 @@ void Entleerer::doIt(float valueInput) {
     std::cout << std::endl;
     std::cout << "Entleervorgang wurde beendet, bitte entnehmen Sie ihren Cocktail!" << std::endl;
     std::cout << std::endl;
-  }
 }
