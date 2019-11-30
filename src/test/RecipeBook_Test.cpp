@@ -37,12 +37,18 @@ class RecipeBookTest : public ::testing::Test {
     delete r;
   }
 };
-
+/*
+ * tests, if num of recipes is equal to number of recipes of obj r
+ */
 TEST_F(RecipeBookTest,getNumberOfRecipesReturnsValueOfAttribute){
     int noOfRecipes=r->m_Recipe.size();
     EXPECT_EQ(noOfRecipes,r->getNumberOfRecipes());
 }
 
+/*
+ * test, if the returned recipe is the expected
+ * note that you have to give the expected return value, otherwise it does not know, for what to check
+ */
 TEST_F(RecipeBookTest,getRecipeReturnsCorrectRecipe){
     Recipe* rez;
     rez = r->getRecipe(0);
@@ -52,14 +58,20 @@ TEST_F(RecipeBookTest,getRecipeReturnsCorrectRecipe){
     EXPECT_EQ(rez->getName(),"Margarita");
 }
 
+/*
+ * test of delete function
+ */
 TEST_F(RecipeBookTest,deleteRecipeRemovesCorrectRecipe){
+    //Testcases, if vector does not have values at given position -> expected false
     EXPECT_FALSE(r->deleteRecipe(-1));
     EXPECT_FALSE(r->deleteRecipe(42));
     EXPECT_FALSE(r->deleteRecipe(2)); 
-    
+
+    //deletes position 0 -> everything else has now a lower number by 1
     EXPECT_TRUE(r->deleteRecipe(0));
     // Since recipe #0 is deleted now Margarita is #0
     Recipe* rez;
+    //check, if recipe[0] is indeed the expected cocktail: Margarita
     rez = r->getRecipe(0);
-    EXPECT_EQ(rez->getName(),"Margarita");    
+    EXPECT_EQ(rez->getName(),"Margarita");
 }

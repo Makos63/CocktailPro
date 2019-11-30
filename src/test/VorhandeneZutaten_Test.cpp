@@ -11,7 +11,9 @@
 
 
 #include <sstream>
-
+/*
+ * fixture class to create obj. and setup neccessary data strucures
+ */
 class VorhandeneZutatenTest: public ::testing::Test
 {
 protected:
@@ -36,7 +38,7 @@ protected:
 
 TEST_F(VorhandeneZutatenTest,getAnzahlVorhandeneZutaten)
 {
-    EXPECT_EQ(16,zv->getAnzahlVorhandeneZutaten());
+    EXPECT_EQ(16,zv->getAnzahlVorhandeneZutaten());       //expression(expected,recieved) <- format of the whole stuff
 }
 
 TEST_F(VorhandeneZutatenTest,FileZutatenDotTxtIsAvailable)
