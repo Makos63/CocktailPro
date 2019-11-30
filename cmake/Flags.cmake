@@ -200,9 +200,9 @@ same as the Google Test name (i.e. ``suite.testcase``); see also
     behavior.
 
   ``NO_PRETTY_VALUES``
-    By default, the value index of value-parameterized tests is replaced by the
-    actual value in the CTest test name.  If this behavior is undesirable
-    (e.g. because the value strings are unwieldy), this option will suppress
+    By default, the amountOfCocktail index of amountOfCocktail-parameterized tests is replaced by the
+    actual amountOfCocktail in the CTest test name.  If this behavior is undesirable
+    (e.g. because the amountOfCocktail strings are unwieldy), this option will suppress
     this behavior.
 
   ``PROPERTIES name1 value1...``
@@ -346,7 +346,7 @@ endfunction()
     Afterwards:
         'targets' holds the passed targets
         'args' holds the aruments passable to __addFlagsToProperty
-        Each value of options is a variable holding whether it has been passed as argument or not
+        Each amountOfCocktail of options is a variable holding whether it has been passed as argument or not
 #]]
 macro(__parseAddXFlags options)
     cmake_parse_arguments("" "${options}" "" "TARGETS;${__SUPPORTED_COMPILER}" ${ARGN})
