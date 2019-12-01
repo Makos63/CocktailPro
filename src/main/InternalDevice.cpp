@@ -1,4 +1,4 @@
-//@(#) InternalDevice.cpp
+ //@(#) InternalDevice.cpp
 
 
 #include "InternalDevice.h"
