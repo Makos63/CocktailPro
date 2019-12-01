@@ -33,13 +33,3 @@ TEST_F(WaageTest, testReturnWaage1Weight){
 TEST_F(WaageTest, testForReturnWaage1Delta){
   EXPECT_EQ(w1->getDelta(), 5);
 }
-
-TEST_F(WaageTest, testForWaage2TaraReturnIsZero){
-  EXPECT_EQ(w2->tara(), 0);
-}
-TEST_F(WaageTest, testReturnWaage2Weight){
-  EXPECT_EQ(w2->getWeight(), 0);
-}
-TEST_F(WaageTest, testForReturnWaage2Delta){
-  EXPECT_EQ(w2->getDelta(), 0);
-}

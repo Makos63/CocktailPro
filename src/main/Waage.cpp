@@ -10,9 +10,9 @@ Waage::Waage(){
 }
 
 
-Waage::Waage(const Waage &org){
-  this->weight = org.weight;
-  this->deltaweight = org.deltaweight;
+Waage::Waage(const Waage &org): weight(org.weight), deltaweight(org.deltaweight){
+  //this->weight = org.weight;
+  //this->deltaweight = org.deltaweight;
 }
 
 void Waage::changeWeight(int v) {

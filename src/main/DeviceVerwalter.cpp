@@ -32,7 +32,7 @@ void DeviceVerwalter::createDevices() {
         else if (myZutat == "Limettenstuecke")
             myDevices->insert(std::make_pair(myZutat, new Dosierer(10, 1000, myZutat, theWaage)));
         else
-            myDevices->insert(std::make_pair(myZutat, new Dosierer(4, 1000, myZutat, theWaage)));
+            myDevices->insert(std::make_pair(myZutat, new Dosierer(1, 1000, myZutat, theWaage)));
     }
 }
 
