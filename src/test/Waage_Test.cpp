@@ -14,19 +14,32 @@
 
 class WaageTest : public ::testing::Test{
  protected:
-  Waage* w;
+  Waage* w1;
+  Waage* w2;
   void SetUp(){
-    w = new Waage();
-    w->changeWeight(5);
+    w1 = new Waage();
+    w2 = new Waage();
+    w1->changeWeight(5);
+    w2->changeWeight(0);
   }
 };
 
-TEST_F(WaageTest, testForTaraReturnIsZero){
-  EXPECT_EQ(w->tara(), 0);
+TEST_F(WaageTest, testForWaage1TaraReturnIsZero){
+  EXPECT_EQ(w1->tara(), 0);
 }
-TEST_F(WaageTest, testReturnWeight){
-  EXPECT_EQ(w->getWeight(), 5);
+TEST_F(WaageTest, testReturnWaage1Weight){
+  EXPECT_EQ(w1->getWeight(), 5);
 }
-TEST_F(WaageTest, testForReturnDelta){
-  EXPECT_EQ(w->getDelta(), 5);
+TEST_F(WaageTest, testForReturnWaage1Delta){
+  EXPECT_EQ(w1->getDelta(), 5);
+}
+
+TEST_F(WaageTest, testForWaage2TaraReturnIsZero){
+  EXPECT_EQ(w2->tara(), 0);
+}
+TEST_F(WaageTest, testReturnWaage2Weight){
+  EXPECT_EQ(w2->getWeight(), 0);
+}
+TEST_F(WaageTest, testForReturnWaage2Delta){
+  EXPECT_EQ(w2->getDelta(), 0);
 }
