@@ -29,10 +29,14 @@ class RecipeStepTest : public ::testing::Test{
   };
 };
 
-TEST_F(RecipeStepTest, getMengeAndZutat){
+TEST_F(RecipeStepTest, getMengeOfZutat){
   EXPECT_EQ(rs1->getMenge(),2);
-  EXPECT_EQ(rs1->getZutat(),"Eis");
 
   EXPECT_EQ(rs2->getMenge(),8);
-  EXPECT_EQ(rs2->getZutat(),"Limettensaft");
+}
+
+TEST_F(RecipeStepTest, getZutatName){
+EXPECT_EQ(rs1->getZutat(),"Eis");
+
+EXPECT_EQ(rs2->getZutat(),"Limettensaft");
 }
