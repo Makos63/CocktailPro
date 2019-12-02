@@ -1,7 +1,7 @@
 # Add all test files including the file holding the test main function
 add_executable(CocktailProTest
         ../src/test/RecipeBook_Test.cpp
-        ../src/test/VorhandeneZutaten_Test.cpp ../src/test/RecipeStep_Test.cpp ../src/test/Schuettler_Test.cpp ../src/test/Waage_Test.cpp ../src/test/Timer_Test.cpp ../src/test/Stampfer_Test.cpp ../src/test/Mixer_Test.cpp ../src/test/WaageSubjectObserver_Test.cpp ../src/test/DeviceVerwalter_Test.cpp)
+        ../src/test/VorhandeneZutaten_Test.cpp ../src/test/RecipeStep_Test.cpp ../src/test/Schuettler_Test.cpp ../src/test/Waage_Test.cpp ../src/test/Timer_Test.cpp ../src/test/Stampfer_Test.cpp ../src/test/Mixer_Test.cpp ../src/test/WaageSubjectObserver_Test.cpp ../src/test/DeviceVerwalter_Test.cpp ../src/test/DosiererTest.cpp ../src/test/EntleererTest.cpp ../src/test/MischbaresRezeptbuchTest.cc)
 
 # Link CocktailProTest against CocktailProSource
 linkCocktailProSource(CocktailProTest)
