@@ -27,9 +27,9 @@ class EntleererTest : public ::testing::Test{
 };
 
 
-TEST_F(EntleererTest, DoItTest){
+/*TEST_F(EntleererTest, DoItTest){
   EXPECT_NO_FATAL_FAILURE(e->doIt(5));
 }
 TEST_F(EntleererTest, update){
   EXPECT_NO_FATAL_FAILURE(e->update());
-}
+}*/

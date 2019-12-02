@@ -28,10 +28,10 @@ class DosiererTest : public ::testing::Test{
 
 /*TEST_F(DosiererTest, UpdateTest){
   EXPECT_NO_FATAL_FAILURE(d->update());
-}*/
+}
 TEST_F(DosiererTest, GetStuckTest){
   EXPECT_NO_FATAL_FAILURE(d->getStueckProZeit());
-}/*
+}
 TEST_F(DosiererTest, DoItTest){
   EXPECT_NO_FATAL_FAILURE(d->doIt(5));
 }*/
