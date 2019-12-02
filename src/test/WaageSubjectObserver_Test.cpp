@@ -1,6 +1,7 @@
+
+#include <gtest/gtest.h>
 #define protected public
 #define private public
-#include <gtest/gtest.h>
 #include "Dosierer.h"
 #include "Waage.h"
 #undef protected

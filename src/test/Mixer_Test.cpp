@@ -1,10 +1,11 @@
 //
 // Created by Maciej Krzysztoń on 02.12.19.
 //
+#include <gtest/gtest.h>
 
 #define protected public
 #define private public
-#include <gtest/gtest.h>
+
 #include "Mixer.h"
 #undef protected
 #undef private
