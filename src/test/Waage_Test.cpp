@@ -22,6 +22,10 @@ class WaageTest : public ::testing::Test{
     w1->changeWeight(5);
     w2->changeWeight(0);
   }
+  virtual void TearDown(){
+    delete w1;
+    delete w2;
+  };
 };
 
 TEST_F(WaageTest, testForWaage1TaraReturnIsZero){

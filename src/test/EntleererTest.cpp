@@ -1,7 +1,7 @@
 //
 // Created by Maciej Krzysztoń on 02.12.19.
 //
-
+#include <limits.h>
 
 #include <gtest/gtest.h>
 #define protected public
@@ -18,7 +18,6 @@ class EntleererTest : public ::testing::Test{
   float grammProZeit;
   void SetUp(){
     e = new Entleerer(20,1,w);
-    grammProZeit =20;
   }
   virtual void TearDown(){
     delete w;
@@ -33,3 +32,4 @@ TEST_F(EntleererTest, DoItTest){
 TEST_F(EntleererTest, update){
   EXPECT_NO_FATAL_FAILURE(e->update());
 }
+

@@ -1,7 +1,7 @@
 //
 // Created by Maciej Krzysztoń on 02.12.19.
 //
-
+/*
 #include <gtest/gtest.h>
 #define protected public
 #define private public
@@ -26,14 +26,14 @@ class DosiererTest : public ::testing::Test{
 };
 
 
-/*TEST_F(DosiererTest, UpdateTest){
+TEST_F(DosiererTest, UpdateTest){
   EXPECT_NO_FATAL_FAILURE(d->update());
-}*/
+}
 TEST_F(DosiererTest, GetStuckTest){
   EXPECT_EQ(d->getStueckProZeit(),20000);
-}/*
+}
 TEST_F(DosiererTest, DoItTest){
   EXPECT_NO_FATAL_FAILURE(d->doIt(5));
-}*/
+}
 
-
+*/
