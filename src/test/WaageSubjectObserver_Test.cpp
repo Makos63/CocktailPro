@@ -4,6 +4,7 @@
 #define private public
 #include "Dosierer.h"
 #include "Waage.h"
+#include "Entleerer.h"
 #undef protected
 #undef private
 
@@ -11,8 +12,10 @@ class WaageSubjectObserverTest : public ::testing::Test{
  protected:
   Dosierer* d;
   Waage* w;
+  Entleerer* e;
   void SetUp(){
-    d = new Dosierer(10, 20, "test", w);
+    d = new Dosierer();
+    e = new Entleerer();
     w = new Waage();
   }
   virtual void TearDown(){
@@ -31,5 +34,6 @@ TEST_F(WaageSubjectObserverTest, NotifyTest){
 }
 
 TEST_F(WaageSubjectObserverTest, UpdateTest){
-  EXPECT_NO_FATAL_FAILURE(d->update());
+  e->outputEnable=false;
+  EXPECT_NO_FATAL_FAILURE(e->update());
 }*/

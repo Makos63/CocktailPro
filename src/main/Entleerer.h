@@ -30,6 +30,7 @@ public:
 * 	@return no return
 */
     Entleerer(float g, int ze, Waage * wg);
+    Entleerer();
     ~Entleerer();
 	
 	/**
