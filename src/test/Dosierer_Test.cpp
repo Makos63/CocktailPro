@@ -1,8 +1,8 @@
 //
 // Created by Maciej Krzysztoń on 02.12.19.
 //
-
 #include <gtest/gtest.h>
+
 #define protected public
 #define private public
 #include "Dosierer.h"
@@ -17,7 +17,7 @@ class DosiererTest : public ::testing::Test{
   float grammProZeit;
   void SetUp(){
     d = new Dosierer(20000,1,"Eis",w);
-    grammProZeit =20;
+
     }
   virtual void TearDown(){
     delete w;
@@ -30,7 +30,7 @@ class DosiererTest : public ::testing::Test{
   EXPECT_NO_FATAL_FAILURE(d->update());
 }*/
 TEST_F(DosiererTest, GetStuckTest){
-  EXPECT_EQ(d->getStueckProZeit(),20000);
+  EXPECT_NO_FATAL_FAILURE(d->getStueckProZeit());
 }/*
 TEST_F(DosiererTest, DoItTest){
   EXPECT_NO_FATAL_FAILURE(d->doIt(5));
