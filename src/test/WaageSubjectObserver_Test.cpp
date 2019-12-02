@@ -20,6 +20,7 @@ class WaageSubjectObserverTest : public ::testing::Test{
   };
 };
 
+/*
 TEST_F(WaageSubjectObserverTest, AttachTest){
   ASSERT_NO_FATAL_FAILURE(w->attach(d));
 }
@@ -30,4 +31,4 @@ TEST_F(WaageSubjectObserverTest, NotifyTest){
 
 TEST_F(WaageSubjectObserverTest, UpdateTest){
   EXPECT_NO_FATAL_FAILURE(d->update());
-}
+}*/
