@@ -29,7 +29,7 @@
       <extensions>
         <pair source="cc" header="h" fileNamingConvention="NONE" />
         <pair source="c" header="h" fileNamingConvention="NONE" />
-        <pair source="cpp" header="h" fileNamingConvention="NONE" />
+        <pair source="cpp" header="h" fileNamingConvention="CAMEL_CASE" />
       </extensions>
     </Objective-C-extensions>
     <Python>
