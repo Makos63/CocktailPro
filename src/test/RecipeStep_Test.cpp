@@ -29,15 +29,6 @@ class RecipeStepTest : public ::testing::Test{
   }
 };
 
-/*TEST_F(RecipeStepTest, setMenge){
-  EXPECT_NO_FATAL_FAILURE(rs1->setMenge(2));
-  EXPECT_NO_FATAL_FAILURE(rs2->setMenge(8));
-}
-TEST_F(RecipeStepTest, setZutat){
-  EXPECT_NO_FATAL_FAILURE(rs1->setZutat("Eis"));
-  EXPECT_NO_FATAL_FAILURE(rs2->setZutat("Limettensaft"));
-}*/
-
 
 TEST_F(RecipeStepTest, getMengeOfZutat){
   EXPECT_EQ(rs1->getMenge(),2);
