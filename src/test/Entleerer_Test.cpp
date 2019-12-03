@@ -14,22 +14,21 @@
 class EntleererTest : public ::testing::Test{
  protected:
   Entleerer* e;
-  Waage* w;
-  float grammProZeit;
+
   void SetUp(){
-    e = new Entleerer(20,1,w);
-    grammProZeit =20;
+
+    e = new Entleerer(2,1,new Waage);
   }
   virtual void TearDown(){
-    delete w;
+
     delete e;
-  };
+  }
 };
 
 
-/*TEST_F(EntleererTest, DoItTest){
+TEST_F(EntleererTest, DoItTest){
   EXPECT_NO_FATAL_FAILURE(e->doIt(5));
 }
-TEST_F(EntleererTest, update){
+TEST_F(EntleererTest, updateTestForFailure){
   EXPECT_NO_FATAL_FAILURE(e->update());
-}*/
+}

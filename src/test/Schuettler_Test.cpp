@@ -20,7 +20,7 @@ class SchuettlerTest : public ::testing::Test{
   }
   virtual void TearDown(){
     delete s;
-  };
+  }
 };
 
 TEST_F(SchuettlerTest, testTimeLength){

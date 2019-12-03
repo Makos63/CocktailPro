@@ -23,6 +23,4 @@ void InternalDevice::putzen() {
     myTimer->sleep(500);
     std::cout << "Ich bin fertig mit putzen!" << std::endl;
 }
- InternalDevice::~InternalDevice() {
 
- }

@@ -18,7 +18,7 @@ class MixerTest : public ::testing::Test{
   }
   virtual void TearDown(){
     delete m;
-  };
+  }
 };
 
 TEST_F(MixerTest, BasicUsability){

@@ -13,20 +13,17 @@
 class DosiererTest : public ::testing::Test{
  protected:
   Dosierer* d;
-  Waage* w;
   float grammProZeit;
   void SetUp(){
-    d = new Dosierer(20000,1,"Eis",w);
-
+    d = new Dosierer(20000,1,"Eis",new Waage);
     }
   virtual void TearDown(){
-    delete w;
     delete d;
   };
 };
 
 
-/*TEST_F(DosiererTest, UpdateTest){
+TEST_F(DosiererTest, UpdateTest){
   EXPECT_NO_FATAL_FAILURE(d->update());
 }
 TEST_F(DosiererTest, GetStuckTest){
@@ -34,6 +31,6 @@ TEST_F(DosiererTest, GetStuckTest){
 }
 TEST_F(DosiererTest, DoItTest){
   EXPECT_NO_FATAL_FAILURE(d->doIt(5));
-}*/
+}
 
 

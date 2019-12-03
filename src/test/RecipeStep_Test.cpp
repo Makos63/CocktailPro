@@ -26,7 +26,7 @@ class RecipeStepTest : public ::testing::Test{
   }
   virtual void TearDown(){
     delete rs1,rs2;
-  };
+  }
 };
 
 /*TEST_F(RecipeStepTest, setMenge){
