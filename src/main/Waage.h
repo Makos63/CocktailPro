@@ -23,7 +23,7 @@ class Waage : public Subject {
    * @brief copy constructor
    * @param org existing instance of Waage
    */
-  Waage( const Waage &org);
+  //Waage( const Waage &org);
 
 
 /**
