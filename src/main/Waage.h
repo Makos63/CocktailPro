@@ -18,7 +18,7 @@ class Waage : public Subject {
  * @brief default constructor
  */
   Waage();
-
+/*
   /**
    * @brief copy constructor
    * @param org existing instance of Waage
