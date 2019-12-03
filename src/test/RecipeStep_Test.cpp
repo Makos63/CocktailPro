@@ -29,6 +29,16 @@ class RecipeStepTest : public ::testing::Test{
   };
 };
 
+/*TEST_F(RecipeStepTest, setMenge){
+  EXPECT_NO_FATAL_FAILURE(rs1->setMenge(2));
+  EXPECT_NO_FATAL_FAILURE(rs2->setMenge(8));
+}
+TEST_F(RecipeStepTest, setZutat){
+  EXPECT_NO_FATAL_FAILURE(rs1->setZutat("Eis"));
+  EXPECT_NO_FATAL_FAILURE(rs2->setZutat("Limettensaft"));
+}*/
+
+
 TEST_F(RecipeStepTest, getMengeOfZutat){
   EXPECT_EQ(rs1->getMenge(),2);
 
@@ -39,4 +49,12 @@ TEST_F(RecipeStepTest, getZutatName){
 EXPECT_EQ(rs1->getZutat(),"Eis");
 
 EXPECT_EQ(rs2->getZutat(),"Limettensaft");
+}
+
+TEST_F(RecipeStepTest, setIngredientAndsetQuantitySettingTheRightValue) {
+  EXPECT_NO_THROW(rs1->setZutat("Wodka"));
+  EXPECT_EQ("Wodka", rs1->getZutat());
+  EXPECT_NO_THROW(rs1->setMenge(5));
+  EXPECT_EQ(5, rs1->getMenge());
+
 }
