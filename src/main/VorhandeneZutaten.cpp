@@ -9,11 +9,11 @@ VorhandeneZutaten::VorhandeneZutaten(void) {
     this->anzahlDosierer = zutaten->size();
 
 }
-VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz) {
+VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz): zutaten(new std::vector<std::string>), anzahlDosierer(vz.anzahlDosierer) {
     //TODO zutaten schould be initialised in lesen()
-    this->zutaten = new std::vector<std::string>;
+    //this->zutaten = new std::vector<std::string>;
     lesen();
-    this->anzahlDosierer = vz.anzahlDosierer;
+    //this->anzahlDosierer = vz.anzahlDosierer;
 
 }
 
