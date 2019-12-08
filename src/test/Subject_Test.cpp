@@ -21,16 +21,18 @@ class SubjectTest: public ::testing::Test
 {
  protected:
   Subject* subject;
-
+  std::basic_streambuf<char>* old_buf;
+  std::stringstream ss;
 
   virtual void SetUp()
   {
-    subject = new Subject();
+    old_buf = std::cout.rdbuf(ss.rdbuf());
+    subject =new Subject();
   }
 
   virtual void TearDown()
   {
-
+    std::cout.rdbuf(old_buf);
     delete subject;
   }
 };

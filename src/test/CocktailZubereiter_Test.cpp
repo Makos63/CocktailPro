@@ -36,24 +36,27 @@ class CocktailZubereiterTest : public ::testing::Test{
 
   }
   virtual void TearDown(){
+    std::cout.rdbuf(old_buf);
     delete cz;
     delete v;
     delete d;
     delete r;
-    std::cout.rdbuf(old_buf);
   };
 };
 
 
 TEST_F(CocktailZubereiterTest, testCocktailZubereitung)
 {
-
   Recipe * rez;
   rez = r->getRecipe(0);
   EXPECT_TRUE(cz->cocktailZubereiten(rez));
 }
-/*TEST_F(CocktailZubereiterTest, testTextOutput){
+
+TEST_F(CocktailZubereiterTest, testTextOutput){
   ss.clear();
-  EXPECT_EQ("Hallo, ich bin der CocktailZubereiter!",ss.str().substr(348,37));
+  Recipe * rez;
+  rez = r->getRecipe(0);
+  cz->cocktailZubereiten(rez);
+  EXPECT_EQ("Hallo, ich bin der CocktailZubereiter!",ss.str().substr(348,38));
   std::cout.rdbuf(old_buf);
-}*/
+}
