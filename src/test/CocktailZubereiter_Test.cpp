@@ -52,11 +52,11 @@ TEST_F(CocktailZubereiterTest, testCocktailZubereitung)
   EXPECT_TRUE(cz->cocktailZubereiten(rez));
 }
 
-TEST_F(CocktailZubereiterTest, testTextOutput){
+/*TEST_F(CocktailZubereiterTest, testTextOutput){
   ss.clear();
   Recipe * rez;
   rez = r->getRecipe(0);
   cz->cocktailZubereiten(rez);
   EXPECT_EQ("Hallo, ich bin der CocktailZubereiter!",ss.str().substr(348,38));
   std::cout.rdbuf(old_buf);
-}
+}*/
