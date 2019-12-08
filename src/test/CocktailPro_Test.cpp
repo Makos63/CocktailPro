@@ -17,7 +17,7 @@
 class CocktailProTest : public ::testing::Test{
  protected:
   CocktailPro* c;
-  DeviceVerwalter * d;
+  DeviceVerwalter* d;
   VorhandeneZutaten* v;
   MischbaresRezeptbuch* m;
   CocktailZubereiter* cz;
@@ -27,7 +27,7 @@ class CocktailProTest : public ::testing::Test{
     v = new VorhandeneZutaten();
     d = new DeviceVerwalter(v);
     m = new MischbaresRezeptbuch(v);
-    //c = new CocktailPro();
+    //c = new CocktailPro(2, '-D');
   }
   virtual void TearDown(){
     delete c;
