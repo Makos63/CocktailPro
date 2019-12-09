@@ -52,6 +52,4 @@ bool Timer::instanceFlag = false;
 
 Timer * Timer::theTimer = 0;
 
-int Timer::get_Turbo() {
-  return booster;
-}
+
