@@ -38,3 +38,14 @@ made a copy constructor
 
 ******************* Subject.cpp ******************* 
 commented out "detach" for later use, if we want to delete the pointer to an observer
+
+
+
+
+###########################################################################################
+					Test_Cases
+###########################################################################################
+
+******************* CocktailPro_Test *******************
+not testing "start" atm, because it would loop infinetly, same for waehle
+
