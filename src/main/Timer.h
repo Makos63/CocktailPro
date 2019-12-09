@@ -30,6 +30,11 @@ class Timer {
  
     void set_Turbo(int turbo);
 /**
+ *@brief function returns booster for speeding up
+ *@return  turbo of int
+ */
+    int get_Turbo();
+/**
  *@brief function used to implement single ton pattern,returns the only 
 instance of time
  *@return a pointer to an object of type Timer

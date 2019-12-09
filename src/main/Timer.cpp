@@ -51,3 +51,7 @@ void Timer::sleep_in_one_second_intervals(long delay_in_ms) {
 bool Timer::instanceFlag = false;
 
 Timer * Timer::theTimer = 0;
+
+int Timer::get_Turbo() {
+  return booster;
+}

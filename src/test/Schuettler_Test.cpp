@@ -23,7 +23,7 @@ class SchuettlerTest : public ::testing::Test{
   }
 };
 
-TEST_F(SchuettlerTest, testTimeLength){
+/*TEST_F(SchuettlerTest, testTimeLength){
   time_t start, end;
   time(&start);
   s->doIt(4);
@@ -36,4 +36,22 @@ TEST_F(SchuettlerTest, testTimeLength){
   time(&end);
   duration = double(end - start);
   EXPECT_EQ(2, duration);
+}*/
+TEST_F(SchuettlerTest, testWithFailure){
+  EXPECT_NO_FATAL_FAILURE(s->doIt(4));
 }
+
+/*TEST_F(SchuettlerTest, doYourTaskRunsForTheExpectedTime) {
+  time_t start, end;
+  time(&start);
+  s->doIt(4);
+  time(&end);
+  double duration = double(end - start);
+  EXPECT_EQ((4 / s->myTimer->get_Turbo()), duration);
+
+  time(&start);
+  s->doIt(8);
+  time(&end);
+  duration = int(end - start);
+  EXPECT_EQ((8 / s->myTimer->get_Turbo()), duration);
+}*/
