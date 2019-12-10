@@ -142,8 +142,9 @@ void RecipeBook::createBackupRecipes() {
   r1->appendStep("Schuetteln", 10);
   this->m_Recipe.push_back(r1);
 }
+
 void RecipeBook::readFile(std::ifstream &in) {
-/*
+
 
   std::string zeile;
   getline(in, zeile);
@@ -177,5 +178,5 @@ void RecipeBook::readFile(std::ifstream &in) {
     this->m_Recipe.push_back(r1);
   }
   in.close();
-  */
+
 }
