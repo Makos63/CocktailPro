@@ -23,7 +23,7 @@ RecipeBook::RecipeBook(void) {
      if(!in){
        throw "File Rezepte.csv could not be found or opened..";
      }
-     readFile(in);
+     //readFile(in);
    }catch(const char* e){
      std::cout <<e<<std::endl;
      std::cout <<"creating backup recipes..."<<std::endl;
@@ -143,7 +143,7 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 }
 
-void RecipeBook::readFile(std::ifstream &in) {
+/*void RecipeBook::readFile(std::ifstream &in) {
 
 
   std::string zeile;
@@ -179,4 +179,4 @@ void RecipeBook::readFile(std::ifstream &in) {
   }
   in.close();
 
-}
+}*/

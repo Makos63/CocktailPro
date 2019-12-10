@@ -77,13 +77,13 @@ class RecipeBook {
   * It is better to use a file!
   */
   void createBackupRecipes();
-/**@brief will read csv file format
+/*@brief will read csv file format
  * supported format:
  * recipeName, zutatName, menge
  * string,string,float
  * @param filename file to be read
  */
-  void readFile(std::ifstream &filename);
+  //void readFile(std::ifstream &filename);
 };
 
 #endif
