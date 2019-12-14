@@ -16,6 +16,10 @@
 
 class Recipe {
 private:
+/**
+* this is the number of the recipe
+*/
+  int recipeNumber;
 
 /**
 * this is the list of RecipeStep
@@ -29,10 +33,7 @@ private:
 
     std::string m_Name;
 
-/**
-* this is the number of the recipe
-*/
-    int recipeNumber;
+
 
 
  public:

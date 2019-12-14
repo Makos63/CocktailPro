@@ -7,6 +7,7 @@
 Recipe::Recipe(void) {
     m_RecipeStep.clear();
     m_Name = "";
+    recipeNumber = 0;
 }
 
 Recipe::~Recipe() {
@@ -52,6 +53,6 @@ void Recipe::appendStep(std::string z, float m) {
 int Recipe::getRecipeNumber() const {
   return recipeNumber;
 }
-void Recipe::setRecipeNumber(int recipeNumber) {
-  Recipe::recipeNumber = recipeNumber;
+void Recipe::setRecipeNumber(int number) {
+  this->recipeNumber = number;
 }
