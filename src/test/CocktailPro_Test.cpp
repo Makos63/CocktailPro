@@ -30,8 +30,7 @@ class CocktailProTest : public ::testing::Test{
   stringstream inputStream;
   char * s= "-D";
   char **turbo = &s;
-  void TestBody() {
-  }
+
   void SetUp(){
     old_buf = cout.rdbuf(ss.rdbuf());
     old_inputbuf = cin.rdbuf(inputStream.rdbuf());

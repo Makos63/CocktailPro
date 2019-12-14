@@ -29,7 +29,13 @@ private:
 
     std::string m_Name;
 
-public:
+/**
+* this is the number of the recipe
+*/
+    int recipeNumber;
+
+
+ public:
 
 /**
 * @brief is a constructor for class Recipe
@@ -100,6 +106,18 @@ public:
 * output of the Recipe
 */
     void browse();
+
+/**
+ * @brief gets recipeNumber
+ * @return recipeNumber
+ */
+  int getRecipeNumber() const;
+
+/**
+ * @brief sets recipeNumber
+ * @param recipeNumber
+ */
+  void setRecipeNumber(int recipeNumber);
 
 };
 

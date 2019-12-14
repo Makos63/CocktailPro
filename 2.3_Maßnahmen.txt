@@ -8,6 +8,7 @@ commented out method "setTimer" for maybe later use
 
 ******************* MischbaresRezept.cpp ******************* 
 made constructor explicit
+changed the cocktailNumber to a getter method, to get the right cocktailnumber constantly
 
 ******************* Entleerer.h/cpp *******************
 changed name of second value into valueInput
@@ -17,6 +18,7 @@ changed variables names, added constructors
 
 ******************* Recipe.h/cpp *******************
 added constructor
+added cocktailNumber as integer variable plus getter/setter, to set a fixed cocktailnumber
 
 ******************* DeviceVerwalter.cpp *******************
 changed i++ to ++i for performance improvements
@@ -39,7 +41,8 @@ made a copy constructor
 ******************* Subject.cpp ******************* 
 commented out "detach" for later use, if we want to delete the pointer to an observer
 
-
+******************* RecipeBook.cpp *******************
+added the setter for recipeNumber in the initialization of the cocktails
 
 
 ###########################################################################################
@@ -49,3 +52,10 @@ commented out "detach" for later use, if we want to delete the pointer to an obs
 ******************* CocktailPro_Test *******************
 not testing "start" atm, because it would loop infinetly, same for waehle
 
+
+
+###########################################################################################
+					General
+###########################################################################################
+14.12.2019: added my changes to the Maßnahmen.txt
+14.12.2019: added a TimePlan file to track the time for the tasks

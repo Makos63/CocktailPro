@@ -66,6 +66,7 @@ void RecipeBook::createBackupRecipes() {
   Recipe *r1;
 
   r1 = new Recipe;
+  r1->setRecipeNumber(1);
   r1->setName("Caipirinha");
   r1->appendStep("Limettenstuecke", 8);
   r1->appendStep("Zucker", 15);
@@ -76,6 +77,7 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 
   r1 = new Recipe;
+  r1->setRecipeNumber(2);
   r1->setName("Margarita");
   r1->appendStep("Zitronensaft", 2);
   r1->appendStep("Cointreau", 2);
@@ -85,6 +87,7 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 
   r1 = new Recipe;
+  r1->setRecipeNumber(3);
   r1->setName("Daiquiri");
   r1->appendStep("Limettensaft", 2);
   r1->appendStep("Zuckersirup", 2);
@@ -94,6 +97,7 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 
   r1 = new Recipe;
+  r1->setRecipeNumber(4);
   r1->setName("Planters Punch");
   r1->appendStep("Zitronensaft", 2);
   r1->appendStep("Grenadine", 1);
@@ -104,6 +108,7 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 
   r1 = new Recipe;
+  r1->setRecipeNumber(5);
   r1->setName("Caipiroska");
   r1->appendStep("Limettenstuecke", 8);
   r1->appendStep("Zucker", 15);
@@ -114,6 +119,7 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 
   r1 = new Recipe;
+  r1->setRecipeNumber(6);
   r1->setName("Caipirissima");
   r1->appendStep("Limettenstuecke", 8);
   r1->appendStep("Zucker", 15);
@@ -124,6 +130,7 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 
   r1 = new Recipe;
+  r1->setRecipeNumber(7);
   r1->setName("Cuban Island");
   r1->appendStep("Zitronensaft", 2);
   r1->appendStep("Cointreau", 2);
@@ -135,6 +142,7 @@ void RecipeBook::createBackupRecipes() {
 
 
   r1 = new Recipe;
+  r1->setRecipeNumber(8);
   r1->setName("Martini James B");
   r1->appendStep("Gin", 6);
   r1->appendStep("Wodka", 2);

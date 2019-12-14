@@ -11,7 +11,7 @@ void MischbaresRezeptbuch::browse() {
 
     for (int i = 0; i<this->getNumberOfRecipes(); i++) {
         Recipe* r = this->getRecipe(i);
-        std::cout << i + 1 << ". ";
+        std::cout << r->getRecipeNumber()<<". ";
         r->browse();
         std::cout << std::endl;
     }
