@@ -43,6 +43,14 @@ int RecipeBook::getNumberOfRecipes() {
   return (m_Recipe.size());
 }
 
+Recipe * RecipeBook::findRecipe(unsigned int i) {
+  for(std::list<Recipe*>::iterator p = m_Recipe.begin(); p != m_Recipe.end(); ++p) {
+    unsigned int number = (*p)->getRecipeNumber();
+    if((*p)->getRecipeNumber() == i) return *p;
+  }
+  return NULL;
+}
+
 Recipe *RecipeBook::getRecipe(unsigned int i) {
   if (i > m_Recipe.size()) return NULL;
   else {
@@ -50,6 +58,7 @@ Recipe *RecipeBook::getRecipe(unsigned int i) {
     advance(p = m_Recipe.begin(), i); // p zeigt jetzt auf das i-te Element
     return *p; // Wert von p - also den Pointer zurueck
   }
+
 }
 
 bool RecipeBook::deleteRecipe(unsigned int i) {

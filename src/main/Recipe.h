@@ -112,7 +112,7 @@ private:
  * @brief gets recipeNumber
  * @return recipeNumber
  */
-  int getRecipeNumber() const;
+  unsigned int getRecipeNumber() const;
 
 /**
  * @brief sets recipeNumber

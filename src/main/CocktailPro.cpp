@@ -10,11 +10,10 @@
 void CocktailPro::start(){
     while (true) {
         int CocktailNo = waehle();
-        int max = theMischbaresRezeptbuch->getNumberOfRecipes();
-        if (CocktailNo > 0 && CocktailNo <= max) {
-            Recipe * rezeptptr = theMischbaresRezeptbuch->getRecipe(CocktailNo - 1);
-            std::cout << rezeptptr->getName() << std::endl;
-            theCocktailZubereiter->cocktailZubereiten(rezeptptr);
+            Recipe * rezeptptr = theMischbaresRezeptbuch->findRecipe(CocktailNo);
+            if(rezeptptr !=NULL){
+              std::cout << rezeptptr->getName() << std::endl;
+              theCocktailZubereiter->cocktailZubereiten(rezeptptr);
         } else {
             std::cout << "Falsche Cocktailnummer!" << std::endl;
         }
@@ -53,9 +52,8 @@ CocktailPro::CocktailPro(int argc, char * * param) {
 
 void CocktailPro::demo() {
     int CocktailNo = 1;
-    int max = theMischbaresRezeptbuch->getNumberOfRecipes();
-    if (CocktailNo > 0 && CocktailNo <= max) {
-        Recipe * rezeptptr = theMischbaresRezeptbuch->getRecipe(CocktailNo - 1);
+        Recipe * rezeptptr = theMischbaresRezeptbuch->findRecipe(CocktailNo);
+        if(rezeptptr !=NULL){
         std::cout << rezeptptr->getName() << std::endl;
         theCocktailZubereiter->cocktailZubereiten(rezeptptr);
     } else {
@@ -76,25 +74,23 @@ int CocktailPro::waehle() {
         std::cin >> eingabe;
 
         int zahl = atoi(eingabe.c_str());
-        int max = theMischbaresRezeptbuch->getNumberOfRecipes();
+
         if (zahl == -1) {
         exit(0);
         }
-      return checkSelect(eingabe, zahl, max);
-
+      if(inputCheck(zahl)) {
+        return zahl;
+      } else {
+        std::cout << "Wrong input" << std::endl;
+      }
     }
 }
-int CocktailPro::checkSelect(const std::string &eingabe, int zahl, int max) const {
-
-  if (zahl > 0 && zahl <= max) {
-      return zahl;
-  } else {
-      //std::system("clear");
-      std::cout << "MEEEP! Too many fingers on keyboard error!" << std::endl;
-      std::cout << "Ihre Eingabe: " << eingabe << " war nicht zwischen 1 und " << max << "!" << std::endl;
-
+bool CocktailPro::inputCheck(unsigned int i) {
+  if(theMischbaresRezeptbuch->findRecipe(i) != NULL) {
+    return true;
   }
-  return 0;
+  return false;
 }
+
 
 

@@ -96,13 +96,10 @@ class CocktailPro {
     void start();
 
 /**
-   * @brief gets the Input from waehle() and checks, if it is valid
-   *
-   * @param eingabe input string,
-   * @param zahl number of input,
-   * @param max max numbre of recipies possible,
-   */
-  int checkSelect(const std::string &eingabe, int zahl, int max) const;
+ * @brief checks if recipe exists at input
+ * @return bool
+ */
+  bool inputCheck(unsigned int);
 };
 
 #endif

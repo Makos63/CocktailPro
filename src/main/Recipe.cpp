@@ -50,7 +50,7 @@ void Recipe::appendStep(std::string z, float m) {
     m_RecipeStep.push_back(t);
 }
 
-int Recipe::getRecipeNumber() const {
+unsigned int Recipe::getRecipeNumber() const {
   return recipeNumber;
 }
 void Recipe::setRecipeNumber(int number) {

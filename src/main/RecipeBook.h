@@ -30,7 +30,7 @@ class RecipeBook {
   * This is the list of recipes that the RecipeBook manages
   */
  private:
-  std::list<Recipe *> m_Recipe;
+  std::list<Recipe*> m_Recipe;
 
  public:
   /** @brief Construktor that creates a RecipeBook
@@ -61,6 +61,14 @@ class RecipeBook {
   * where n is the number of recipes in the RecipeBook
   */
   Recipe *getRecipe(unsigned int i);
+
+  /**
+    * @brief a method for searching a Recipe by comparing the input with the m_Number
+    * values of the Recipe
+    * @param i contains the Recipe Number that findRecipe is searching for
+    * @return returns a pointer of the searched Recipe
+    */
+  Recipe * findRecipe(unsigned int i);
 
   /** @brief Deletes the i-th recipe from the RecipeBook
   * @param [in] i a positive integer for the i-th recipe
