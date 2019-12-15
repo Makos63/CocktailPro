@@ -45,7 +45,6 @@ int RecipeBook::getNumberOfRecipes() {
 
 Recipe * RecipeBook::findRecipe(unsigned int i) {
   for(std::list<Recipe*>::iterator p = m_Recipe.begin(); p != m_Recipe.end(); ++p) {
-    unsigned int number = (*p)->getRecipeNumber();
     if((*p)->getRecipeNumber() == i) return *p;
   }
   return NULL;
