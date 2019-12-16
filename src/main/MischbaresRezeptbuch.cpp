@@ -45,6 +45,7 @@ void MischbaresRezeptbuch::loeschen() {                         //besser dekreme
 
       gesuchteZutat = r->getRecipeStep(j)->getZutat();
 
+
       bool z_ok = boolZutatenCheck(gesuchteZutat);
 
       if (!z_ok) {

@@ -4,7 +4,7 @@
 #define VorhandeneZutaten_H_H
 
 #include <string>
-#include <map>
+#include <unordered_map>
 #include <vector>
 #include <list>
 #include <fstream>
@@ -67,10 +67,9 @@ as string variables
 * a data structure (map) containing all availablie ingredients and amount
 */
 
-    std::map<std::string, int>zutatenMap;
+    std::unordered_map<std::string, float>* zutatenMap;
  public:
-
-  const std::map<std::string, int> &getZutatenMap() const;
+  std::unordered_map<std::string, float> *getZutatenMap() const;
  private:
 /**
  * a static constant boolean variable  for debugging

@@ -32,64 +32,68 @@
  */
 
 class DeviceVerwalter {
-public:
+ public:
   /**
    * Constructor for DeviceVerwalter
    * @param ze is the instance which managed all recipes
    */
-  explicit DeviceVerwalter(VorhandeneZutaten * ze);
+  explicit DeviceVerwalter(VorhandeneZutaten *ze);
 /**
  *
  * @param zutat is a string and a name of ingredient
  * @param menge is a float and the amount of the specified ingredient
  */
-    void rezeptSchrittZubereiten(std::string zutat, float menge);
+  void rezeptSchrittZubereiten(std::string zutat, float menge);
 /**
  * Is call to function of class Entleerer
  * @param menge is a float which will be parsed to Entleerer
  */
-    void entleeren(float menge);
+  void entleeren(float menge);
 
-    /**
-     * clean all devices from map
-     */
-    void putzen();
+  /**
+   * clean all devices from map
+   */
+  void putzen();
+/**
+ * Show warning if the amount of container is under 20%
+ */
+  void printWarning();
 
-private:
+ private:
   /**
    * sets the ze for this class
    * @param ze is the instance which managed all recipes
    */
-   //es macht uberhaupt kein Sinn
-    void setZutatenVerwalter(VorhandeneZutaten * ze);
+  //es macht uberhaupt kein Sinn
+  void setZutatenVerwalter(VorhandeneZutaten *ze);
   /**
    * save all the devices in map.
    */
-    std::map<std::string, InternalDevice *> * myDevices;
+  std::map<std::string, InternalDevice *> *myDevices;
   /**
    * It is needed for communication with Entleerer.
    */
-    Entleerer * myEntleerer;
+  Entleerer *myEntleerer;
   /**
    * It is needed for communication with Mixer.
    */
-    Mixer * myMixer;
+  Mixer *myMixer;
   /**
    * It is needed for communication with Stampfer.
    */
-    Stampfer * myStampfer;
+  Stampfer *myStampfer;
   /**
    * It is needed for communication with Schuettler.
    */
-    Schuettler * mySchuettler;
+  Schuettler *mySchuettler;
   /**
    * It is needed for communication with VorhandeneZutaten.
    */
-    VorhandeneZutaten * myZutatenVerwalter;
+  VorhandeneZutaten *myZutatenVerwalter;
   /**
    * It is needed for communication with Waage.
    */
-    Waage * theWaage;
+  Waage *theWaage;
 /**
  *  @brief Initializes all devices and add them into map myDevices
  *
@@ -102,7 +106,8 @@ private:
  *  Check, if ice or lime is added as ingredient 
  *
  */
-    void createDevices();
+  void createDevices();
+
 };
 
 #endif
