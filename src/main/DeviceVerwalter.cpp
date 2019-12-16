@@ -25,10 +25,9 @@ void DeviceVerwalter::createDevices() {
     myDevices->insert(std::make_pair("Mischen", myMixer));
 
     std::string myZutat;
-    std::map<std::string, int>t;
-    t = myZutatenVerwalter->getZutatenMap();
+    //std::map<std::string, int> *t= myZutatenVerwalter->getZutatenMap();
 
-  for (auto j = t.begin(); j!=t.end() ; ++j) {
+  for (auto j = myZutatenVerwalter->getZutatenMap().begin(); j!=myZutatenVerwalter->getZutatenMap().end() ; ++j) {
     myZutat = j->first;
     if (myZutat == "Eis")
       myDevices->insert(std::make_pair(myZutat, new Dosierer(20, 1000, myZutat, theWaage)));
