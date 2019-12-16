@@ -125,9 +125,12 @@ void VorhandeneZutaten::browse(void) {
 }
 
 void VorhandeneZutaten::addSpecial() {
-    zutaten->push_back("Mischen");
+    zutatenMap.insert(std::pair<std::string, int>("Mischen", 1));
+    zutatenMap.insert(std::pair<std::string, int>("Stampfen", 1));
+    zutatenMap.insert(std::pair<std::string, int>("Schuetteln", 1));
+    /*zutaten->push_back("Mischen");
     zutaten->push_back("Stampfen");
-    zutaten->push_back("Schuetteln");
+    zutaten->push_back("Schuetteln");*/
 }
 
 std::string VorhandeneZutaten::getZutat(std::string i) {

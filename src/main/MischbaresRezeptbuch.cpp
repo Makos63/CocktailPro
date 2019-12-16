@@ -53,17 +53,13 @@ void MischbaresRezeptbuch::loeschen() {                         //besser dekreme
     }
     if (!ok) {
       deleteRecipe(i);
-
     }
   }
 }
 
 bool MischbaresRezeptbuch::boolZutatenCheck(const std::string &gesuchteZutat) const {
-  for (int k = 0; k < myZutatenVerwalter->getAnzahlVorhandeneZutaten(); k++) {
     if (myZutatenVerwalter->getZutat(gesuchteZutat) == gesuchteZutat) {
       return true;
     }
-  }
   return false;
-
 }
