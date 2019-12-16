@@ -60,9 +60,10 @@ void MischbaresRezeptbuch::loeschen() {                         //besser dekreme
 
 bool MischbaresRezeptbuch::boolZutatenCheck(const std::string &gesuchteZutat) const {
   for (int k = 0; k < myZutatenVerwalter->getAnzahlVorhandeneZutaten(); k++) {
-    if (myZutatenVerwalter->getZutat(k) == gesuchteZutat) {
+    if (myZutatenVerwalter->getZutat(gesuchteZutat) == gesuchteZutat) {
       return true;
     }
   }
   return false;
+
 }

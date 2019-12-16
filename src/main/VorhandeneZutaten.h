@@ -10,6 +10,7 @@
 #include <fstream>
 #include <cstdlib> // fuer exit() unter Linux
 #include <iostream>
+#include "sstream"
 
 /**
  *  @class VorhandeneZutaten
@@ -46,7 +47,8 @@ class VorhandeneZutaten {
  *@return  a string-variable
  */
 
-    std::string getZutat(int);
+    std::string getZutat(std::string);
+
 /**
  *@brief returns the amount of available ingredients
  *@return an interger
@@ -60,6 +62,16 @@ class VorhandeneZutaten {
 as string variables
  */
     std::vector<std::string> * zutaten;
+
+/**
+* a data structure (map) containing all availablie ingredients and amount
+*/
+
+    std::map<std::string, int>zutatenMap;
+ public:
+
+  const std::map<std::string, int> &getZutatenMap() const;
+ private:
 /**
  * a static constant boolean variable  for debugging
 */

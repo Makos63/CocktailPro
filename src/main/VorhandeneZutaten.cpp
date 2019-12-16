@@ -22,7 +22,7 @@ VorhandeneZutaten::~VorhandeneZutaten(void) {
  //TODO potencial memoryleak
 }
 
-void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
+/*void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
     std::ifstream in;
 
     FileName = myfile;
@@ -49,6 +49,35 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
         this->zutaten->push_back(zeile);
     }
     in.close();
+}*/
+
+void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
+  std::ifstream in;
+  std::stringstream stream;
+
+  FileName = myfile;
+
+  in.open(FileName.c_str(), std::ios::in); // c_str wandelt den String in char[]
+  // das braucht fstream
+
+  if (!in) {// File konnte nicht geoeffnet werden
+    std::string my_exception = "File not found: " + FileName;
+    std::cout << my_exception << std::endl;
+    throw my_exception;
+  }
+
+  std::cout << "Oeffne Zutatendatei " << FileName << std::endl;
+
+  std::string zeile, tmp, tmp1;
+  while (getline(in, zeile)) {
+
+    stream.clear();
+    stream<<zeile;
+    getline(stream, tmp, ',');
+    getline(stream, tmp1);
+    zutatenMap.insert(std::pair<std::string, int>(tmp, std::stoi(tmp1)));
+  }
+  in.close();
 }
 
 /*void VorhandeneZutaten::DummyZutatenEinfuegen() {
@@ -84,10 +113,15 @@ void VorhandeneZutaten::lesen() {
 
 void VorhandeneZutaten::browse(void) {
     std::cout << "*********** Verfuegbare Einheiten bzw. Zutaten: ***********" << std::endl;
-    for (unsigned int i = 0; i < zutaten->size(); i++/*std::string zutat : zutaten*/) {
-        std::cout << zutaten->at(i) << std::endl;
+    //for (unsigned int i = 0; i < zutaten->size(); i++/*std::string zutat : zutaten*/) {
+    //    std::cout << zutaten->at(i) << std::endl;
+    //}
+    for(auto it = zutatenMap.begin(); it != zutatenMap.end(); ++it){
+      std::cout << it->first << " " << it->second << std::endl;
     }
     std::cout << "**********************************************************" << std::endl;
+
+
 }
 
 void VorhandeneZutaten::addSpecial() {
@@ -96,10 +130,15 @@ void VorhandeneZutaten::addSpecial() {
     zutaten->push_back("Schuetteln");
 }
 
-std::string VorhandeneZutaten::getZutat(int i) {
-    return zutaten->at(i);
+std::string VorhandeneZutaten::getZutat(std::string i) {
+    //return zutaten->at(i);
+    return zutatenMap.find(i)->first;
 }
 
 int VorhandeneZutaten::getAnzahlVorhandeneZutaten() {
-    return zutaten->size();
+    return zutatenMap.size();
 }
+const std::map<std::string, int> &VorhandeneZutaten::getZutatenMap() const {
+  return zutatenMap;
+}
+
