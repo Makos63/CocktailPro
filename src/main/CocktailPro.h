@@ -85,8 +85,9 @@ class CocktailPro {
     * gives the exec modes of the CocktailPro, -d Debug
     * @param argc number of arguments,
     * @param turbo similar to main(argc*, argv**),
+    * @param m_test to check, if program is running in testmode
     */
-    CocktailPro(int argc, char * * turbo, bool);
+    CocktailPro(int argc, char * * turbo, bool m_test);
 
   /**
  * @brief copy constructor for CocktailPro

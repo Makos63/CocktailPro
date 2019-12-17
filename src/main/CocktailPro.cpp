@@ -22,14 +22,18 @@ void CocktailPro::start(){
 
 }
 
-CocktailPro::CocktailPro(const CocktailPro &org) {
+/*CocktailPro::CocktailPro(const CocktailPro &org) {
   theZutatenVerwalter = new VorhandeneZutaten(*org.theZutatenVerwalter);
 
   theMischbaresRezeptbuch = new MischbaresRezeptbuch(*org.theMischbaresRezeptbuch);
   theDeviceVerwalter = new DeviceVerwalter(*org.theDeviceVerwalter);
   theCocktailZubereiter = new CocktailZubereiter(*org.theCocktailZubereiter);
 
+}*/
+CocktailPro::CocktailPro(const CocktailPro &org)
+{
 }
+
 
 CocktailPro::CocktailPro(int argc, char * * param, bool m_test) {
     theZutatenVerwalter = new VorhandeneZutaten();
