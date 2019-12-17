@@ -24,13 +24,12 @@ void CocktailPro::start(){
 
 /*CocktailPro::CocktailPro(const CocktailPro &org) {
   theZutatenVerwalter = new VorhandeneZutaten(*org.theZutatenVerwalter);
-
   theMischbaresRezeptbuch = new MischbaresRezeptbuch(*org.theMischbaresRezeptbuch);
   theDeviceVerwalter = new DeviceVerwalter(*org.theDeviceVerwalter);
   theCocktailZubereiter = new CocktailZubereiter(*org.theCocktailZubereiter);
 
 }*/
-CocktailPro::CocktailPro(const CocktailPro &org)
+CocktailPro::CocktailPro(const CocktailPro &org):theZutatenVerwalter(new VorhandeneZutaten()), theMischbaresRezeptbuch(new MischbaresRezeptbuch(theZutatenVerwalter)), theDeviceVerwalter(new DeviceVerwalter(theZutatenVerwalter)), theCocktailZubereiter(new CocktailZubereiter(theDeviceVerwalter))
 {
 }
 
