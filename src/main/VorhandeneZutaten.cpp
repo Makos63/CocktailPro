@@ -78,11 +78,11 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
     stream << zeile;
     getline(stream, tmp, ',');
     getline(stream, tmp1);
-    amount = std::stof(tmp1);
 
     if (tmp == "Limettenstuecke") {
       amount *= 10;
     }
+    amount = std::stof(tmp1);
 
     zutatenMap->insert(std::pair<std::string, int>(tmp, amount));
   }

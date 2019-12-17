@@ -31,7 +31,7 @@ class CocktailPro {
   /**
    * @brief bool for Testclass to break infinite loop
    */
-  bool test = true;
+  bool test = false;
 
   /** @defgroup CocktailProMain Manager
  *  This is are instances of another parts of the program
@@ -86,7 +86,7 @@ class CocktailPro {
     * @param argc number of arguments,
     * @param turbo similar to main(argc*, argv**),
     */
-    CocktailPro(int argc, char * * turbo);
+    CocktailPro(int argc, char * * turbo, bool);
 
   /**
  * @brief copy constructor for CocktailPro

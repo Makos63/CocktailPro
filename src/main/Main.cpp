@@ -5,7 +5,7 @@
 #include <iostream>
 
 int main(int argc, char * argv[]) {
-    CocktailPro cp(argc, argv);
+    CocktailPro cp(argc, argv, false);
     cp.start();
     return 0;
 }

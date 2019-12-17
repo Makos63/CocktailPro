@@ -31,11 +31,12 @@ CocktailPro::CocktailPro(const CocktailPro &org) {
 
 }
 
-CocktailPro::CocktailPro(int argc, char * * param) {
+CocktailPro::CocktailPro(int argc, char * * param, bool m_test) {
     theZutatenVerwalter = new VorhandeneZutaten();
     theMischbaresRezeptbuch = new MischbaresRezeptbuch(theZutatenVerwalter);
     theDeviceVerwalter = new DeviceVerwalter(theZutatenVerwalter);
     theCocktailZubereiter = new CocktailZubereiter(theDeviceVerwalter);
+    test = m_test;
 
 
     Timer * theTimer = Timer::getInstance();

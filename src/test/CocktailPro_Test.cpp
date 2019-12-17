@@ -37,7 +37,7 @@ class CocktailProTest : public ::testing::Test{
     v = new VorhandeneZutaten();
     d = new DeviceVerwalter(v);
     m = new MischbaresRezeptbuch(v);
-    c = new CocktailPro(2, turbo);
+    c = new CocktailPro(2, turbo, true);
     ss.str("");
   }
   virtual void TearDown(){
