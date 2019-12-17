@@ -69,6 +69,10 @@ as string variables
 
     std::unordered_map<std::string, float>* zutatenMap;
  public:
+  /**
+   * Getter for ZutatenMap
+   * @return pointer to unordned_map
+   */
   std::unordered_map<std::string, float> *getZutatenMap() const;
  private:
 /**
