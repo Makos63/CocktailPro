@@ -15,9 +15,11 @@ void CocktailPro::start(){
               std::cout << rezeptptr->getName() << std::endl;
               theCocktailZubereiter->cocktailZubereiten(rezeptptr);
         } else {
-            std::cout << "Falsche Cocktailnummer!" << std::endl;
-        }
+              std::cout << "Falsche Cocktailnummer!" << std::endl;
+            }
+      if(test){break;}
     }
+
 }
 
 CocktailPro::CocktailPro(const CocktailPro &org) {
@@ -31,7 +33,6 @@ CocktailPro::CocktailPro(const CocktailPro &org) {
 
 CocktailPro::CocktailPro(int argc, char * * param) {
     theZutatenVerwalter = new VorhandeneZutaten();
-
     theMischbaresRezeptbuch = new MischbaresRezeptbuch(theZutatenVerwalter);
     theDeviceVerwalter = new DeviceVerwalter(theZutatenVerwalter);
     theCocktailZubereiter = new CocktailZubereiter(theDeviceVerwalter);

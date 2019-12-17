@@ -49,13 +49,13 @@ class VorhandeneZutaten {
 
     std::string getZutat(std::string);
 
-/**
+/*
  *@brief returns the amount of available ingredients
  *@return an interger
- */
+
 
     int getAnzahlVorhandeneZutaten();
-
+*/
  private:
 /**
  *a data strucuture(vector) containing all the available ingredients 

@@ -52,6 +52,11 @@ TEST_F(CocktailProTest, start) {
   EXPECT_EXIT(c->start(), ::testing::ExitedWithCode(0), "");
 }
 
+TEST_F(CocktailProTest, startTest) {
+  inputStream<<1;
+    EXPECT_NO_FATAL_FAILURE(c->start());
+}
+
 TEST_F(CocktailProTest, demo) {
   c->demo();
   EXPECT_EQ(ss.str().substr(0, 10), "Caipirinha");

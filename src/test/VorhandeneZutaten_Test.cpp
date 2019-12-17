@@ -36,10 +36,10 @@ protected:
     }
 };
 
-TEST_F(VorhandeneZutatenTest,getAnzahlVorhandeneZutaten)
+/*TEST_F(VorhandeneZutatenTest,getAnzahlVorhandeneZutaten)
 {
     EXPECT_EQ(16,zv->getAnzahlVorhandeneZutaten());       //expression(expected,recieved) <- format of the whole stuff
-}
+}*/
 
 TEST_F(VorhandeneZutatenTest,FileZutatenDotTxtIsAvailable)
 {

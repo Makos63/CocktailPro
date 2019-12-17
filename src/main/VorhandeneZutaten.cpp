@@ -71,9 +71,9 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
   std::cout << "Oeffne Zutatendatei " << FileName << std::endl;
 
   std::string zeile, tmp, tmp1;
-  float amount = -1;
-  while (getline(in, zeile)) {
 
+  while (getline(in, zeile)) {
+    float amount = -1;
     stream.clear();
     stream << zeile;
     getline(stream, tmp, ',');
@@ -133,12 +133,11 @@ std::string VorhandeneZutaten::getZutat(std::string i) {
     return it->first;
   }
   return " ";
-
 }
 
-int VorhandeneZutaten::getAnzahlVorhandeneZutaten() {
+/*int VorhandeneZutaten::getAnzahlVorhandeneZutaten() {
   return zutatenMap->size();
-}
+}*/
 std::unordered_map<std::string, float> *VorhandeneZutaten::getZutatenMap() const {
   return zutatenMap;
 }

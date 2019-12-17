@@ -27,6 +27,12 @@
 
 class CocktailPro {
  protected:
+
+  /**
+   * @brief bool for Testclass to break infinite loop
+   */
+  bool test = true;
+
   /** @defgroup CocktailProMain Manager
  *  This is are instances of another parts of the program
  */
@@ -100,6 +106,7 @@ class CocktailPro {
  * @return bool
  */
   bool inputCheck(unsigned int);
+
 };
 
 #endif
