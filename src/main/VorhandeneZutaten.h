@@ -10,7 +10,7 @@
 #include <fstream>
 #include <cstdlib> // fuer exit() unter Linux
 #include <iostream>
-#include "sstream"
+#include <sstream>
 
 /**
  *  @class VorhandeneZutaten

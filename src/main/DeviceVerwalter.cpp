@@ -88,14 +88,10 @@ void DeviceVerwalter::putzen() {
 
 }
 void DeviceVerwalter::printWarning() {
-  float defaultSize = 1000;
-  float warningMargin = 0.2;
-  float orgValue = -1;
   std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
-    orgValue = it->second;
-    if (orgValue <= defaultSize * warningMargin) {
+    if (it->second <= 1000 * 0.2) {
       std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
     }
   }

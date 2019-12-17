@@ -1,4 +1,4 @@
-Limettenstuecke, 100
+Limettenstuecke, 10
 Zucker, 1000
 Cointreau, 1000
 Cachaca, 1000
