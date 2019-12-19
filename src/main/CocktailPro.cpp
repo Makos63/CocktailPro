@@ -21,7 +21,7 @@ void CocktailPro::start(){
     }
 
 }
-
+/*
 CocktailPro::CocktailPro(const CocktailPro &org) {
   theZutatenVerwalter = new VorhandeneZutaten(*org.theZutatenVerwalter);
   theMischbaresRezeptbuch = new MischbaresRezeptbuch(*org.theMischbaresRezeptbuch);
@@ -29,7 +29,7 @@ CocktailPro::CocktailPro(const CocktailPro &org) {
   theCocktailZubereiter = new CocktailZubereiter(*org.theCocktailZubereiter);
 
 }
-
+*/
 
 
 CocktailPro::CocktailPro(int argc, char * * param, bool m_test) {
