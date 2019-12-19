@@ -89,12 +89,12 @@ class CocktailPro {
     */
     CocktailPro(int argc, char * * turbo, bool m_test);
 
-  /*
+  /**
  * @brief copy constructor for CocktailPro
  *
  * @param &org copy of CocktailPro
-
-    CocktailPro(const CocktailPro &org);*/
+*/
+    CocktailPro(const CocktailPro &org);
 
 
   /**
