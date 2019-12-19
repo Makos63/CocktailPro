@@ -33,7 +33,7 @@ CocktailPro::CocktailPro(const CocktailPro &org) {
 
 
 CocktailPro::CocktailPro(int argc, char * * param, bool m_test) {
-    theZutatenVerwalter = new VorhandeneZutaten();
+    theZutatenVerwalter = new VorhandeneZutaten;
     theMischbaresRezeptbuch = new MischbaresRezeptbuch(theZutatenVerwalter);
     theDeviceVerwalter = new DeviceVerwalter(theZutatenVerwalter);
     theCocktailZubereiter = new CocktailZubereiter(theDeviceVerwalter);
