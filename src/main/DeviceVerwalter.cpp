@@ -103,14 +103,9 @@ void DeviceVerwalter::printAmount(){
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
     if(checkForSpecial(it->first)==true) {
-      if (it->first == "Eis") {
-        std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second/20
-                  << std::endl;
-      }
-      else {
+
         std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second
                   << std::endl;
-      }
     }
   }
 }

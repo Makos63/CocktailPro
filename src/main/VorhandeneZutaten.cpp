@@ -82,6 +82,9 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
     if (tmp == "Limettenstuecke") {
       amount *= 10;
     }
+    if (tmp == "Eis"){
+      amount *= 20;
+    }
     amount = std::stof(tmp1);
 
     zutatenMap->insert(std::pair<std::string, int>(tmp, amount));
