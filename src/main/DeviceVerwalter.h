@@ -54,6 +54,7 @@ class DeviceVerwalter {
    * clean all devices from map
    */
   void putzen();
+
 /**
  * Show warning if the amount of container is under 20%
  */
@@ -63,6 +64,11 @@ class DeviceVerwalter {
  * Show amount of container
  */
   void printAmount();
+
+  /**
+* test for special ingredient
+*/
+  bool checkForSpecial(std::string);
 
  private:
   /**
