@@ -97,3 +97,20 @@ void DeviceVerwalter::printWarning() {
   }
 
 }
+
+void DeviceVerwalter::printAmount(){
+  std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
+
+  for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
+    if(it->first != "Schuetteln" &&  it->first != "Stampfen" && it->first != "Mischen") {
+      if (it->first == "Eis") {
+        std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second/20
+                  << std::endl;
+      }
+      else {
+        std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second
+                  << std::endl;
+      }
+    }
+  }
+}

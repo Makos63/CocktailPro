@@ -59,6 +59,11 @@ class DeviceVerwalter {
  */
   void printWarning();
 
+  /**
+ * Show amount of container
+ */
+  void printAmount();
+
  private:
   /**
    * sets the ze for this class

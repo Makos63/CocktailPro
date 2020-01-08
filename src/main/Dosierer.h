@@ -9,6 +9,7 @@
 #include "Observer.h"
 #include "InternalDevice.h"
 #include "Waage.h"
+#include "DeviceVerwalter.h"
 /**
  *@class Dosierer
  *
