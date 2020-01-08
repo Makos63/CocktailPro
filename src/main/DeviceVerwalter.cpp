@@ -109,15 +109,8 @@ void DeviceVerwalter::printAmount(){
 }
 
 bool DeviceVerwalter::checkForSpecial(std::string ingredient){
-  if(ingredient == "Schuetteln"){
+  if(ingredient == "Schuetteln" && ingredient == "Mischen" && ingredient == "Stampfen"){
     return false;
   }
-  if(ingredient == "Stampfen"){
-    return false;
-  }
-  if(ingredient == "Mischen"){
-    return false;
-  }
-
   else return true;
 }
