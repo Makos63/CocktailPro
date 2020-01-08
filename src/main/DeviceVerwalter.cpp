@@ -103,16 +103,21 @@ void DeviceVerwalter::printAmount(){
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
     if(checkForSpecial(it->first)==true) {
-
-        std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second
-                  << std::endl;
+        std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
     }
   }
 }
 
 bool DeviceVerwalter::checkForSpecial(std::string ingredient){
-  if(ingredient == "Schuetteln" &&  ingredient == "Stampfen" && ingredient == "Mischen"){
+  if(ingredient == "Schuetteln"){
     return false;
   }
+  if(ingredient == "Stampfen"){
+    return false;
+  }
+  if(ingredient == "Mischen"){
+    return false;
+  }
+
   else return true;
 }
