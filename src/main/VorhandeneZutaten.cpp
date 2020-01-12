@@ -138,6 +138,25 @@ std::string VorhandeneZutaten::getZutat(std::string i) {
   return " ";
 }
 
+int VorhandeneZutaten::getMenge(std::string i) {
+  //return zutaten->at(i);
+  int amount;
+  for(auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it){
+    for(auto ot = it; ot != zutatenMap->end(); ++ot){
+      if(it->first == ot->first){
+        amount = it->second + ot->second;
+      }
+    }
+  }
+  return amount;
+
+  /*auto it = zutatenMap->find(i);
+  if (it != zutatenMap->end()) {
+    return it->second;
+  }
+  return 0;*/
+}
+
 /*int VorhandeneZutaten::getAnzahlVorhandeneZutaten() {
   return zutatenMap->size();
 }*/

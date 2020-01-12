@@ -83,7 +83,7 @@ private:
    * see @ref VorhandeneZutaten and getZutat()
    * @return bool if found or not
    */
-  bool boolZutatenCheck(const std::string &gesuchteZutat) const;
+  bool boolZutatenCheck(const std::string &gesuchteZutat, int) const;
 };
 
 #endif

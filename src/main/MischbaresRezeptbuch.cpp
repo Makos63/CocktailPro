@@ -42,11 +42,10 @@ void MischbaresRezeptbuch::loeschen() {                         //besser dekreme
     ok = true;
     for (int j = 0; j < r->getNoOfRecipeSteps(); j++) {
       std::string gesuchteZutat;
-
+      int gesuchteMenge = r->getRecipeStep(j)->getMenge();
       gesuchteZutat = r->getRecipeStep(j)->getZutat();
 
-
-      bool z_ok = boolZutatenCheck(gesuchteZutat);
+      bool z_ok = boolZutatenCheck(gesuchteZutat, gesuchteMenge);
 
       if (!z_ok) {
         ok = false;
@@ -58,9 +57,11 @@ void MischbaresRezeptbuch::loeschen() {                         //besser dekreme
   }
 }
 
-bool MischbaresRezeptbuch::boolZutatenCheck(const std::string &gesuchteZutat) const {
+bool MischbaresRezeptbuch::boolZutatenCheck(const std::string &gesuchteZutat, int gesuchteMenge) const {
     if (myZutatenVerwalter->getZutat(gesuchteZutat) == gesuchteZutat) {
-      return true;
+      if(myZutatenVerwalter->getMenge(gesuchteZutat) >= gesuchteMenge) {
+        return true;
+      }
     }
   return false;
 }

@@ -49,6 +49,11 @@ class VorhandeneZutaten {
 
     std::string getZutat(std::string);
 
+/**
+ *@brief returns amount of ingredient
+ *@return  an integer value
+ */
+  int getMenge(std::string);
 /*
  *@brief returns the amount of available ingredients
  *@return an interger
