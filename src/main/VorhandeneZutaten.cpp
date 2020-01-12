@@ -142,9 +142,11 @@ int VorhandeneZutaten::getMenge(std::string i) {
   //return zutaten->at(i);
   int amount;
   for(auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it){
-    for(auto ot = it; ot != zutatenMap->end(); ++ot){
-      if(it->first == ot->first){
-        amount = it->second + ot->second;
+    if(it->first == i) {
+      for (auto ot = it; ot != zutatenMap->end(); ++ot) {
+        if (it->first == ot->first) {
+          amount = it->second + ot->second;
+        }
       }
     }
   }
