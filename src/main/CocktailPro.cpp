@@ -68,9 +68,11 @@ void CocktailPro::demo() {
 int CocktailPro::waehle() {
     while (true) {
         std::cout << "********** Mischbare Rezepte **********" << std::endl;
+        theDeviceVerwalter->printAmount();
+        theMischbaresRezeptbuch->loeschen();
         theMischbaresRezeptbuch->browse();
         theDeviceVerwalter->printWarning();
-        theDeviceVerwalter->printAmount();
+
         std::cout << "Was haetten Sie denn gern? (-1 zum Verlassen)" << std::endl;
 
         std::string eingabe = "";

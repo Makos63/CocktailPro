@@ -46,6 +46,15 @@ public:
 	*/
     void browse();
 
+  /**
+  *	@brief	deletes non available recipes
+  *
+  *	iterates through all recipes and checks, if all ingredients are available.
+  *	if not, it deletes it, to reduce size of the vector.
+  *	Look thru the lists of the cocktails recipes and get recipe steps and
+  *	calls @ref gesuchteZutatenExists
+  */
+  void loeschen();
 private:
 	/**
 	*	Object of the type "myZutatenverwalter" to check, which ingredients are available
@@ -57,15 +66,7 @@ private:
 	*/
     std::vector<Recipe *> rezepte;
 
-	/**
-	*	@brief	deletes non available recipes
-	*
-	*	iterates through all recipes and checks, if all ingredients are available.
-	*	if not, it deletes it, to reduce size of the vector.
-	*	Look thru the lists of the cocktails recipes and get recipe steps and
-	*	calls @ref gesuchteZutatenExists
-	*/
-    void loeschen();
+
 
 	/**
 	*	@brief transferes the "VorhandeneZutaten" to myZutatenVerwalter

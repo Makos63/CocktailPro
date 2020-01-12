@@ -102,6 +102,7 @@ void DeviceVerwalter::printAmount(){
   std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
+
     if(checkForSpecial(it->first)==true) {
         std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
     }
@@ -109,7 +110,7 @@ void DeviceVerwalter::printAmount(){
 }
 
 bool DeviceVerwalter::checkForSpecial(std::string ingredient){
-  if(ingredient == "Schuetteln" && ingredient == "Mischen" && ingredient == "Stampfen"){
+  if(ingredient == "Schuetteln" || ingredient == "Mischen" || ingredient == "Stampfen"){
     return false;
   }
   else return true;
