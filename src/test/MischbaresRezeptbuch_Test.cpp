@@ -32,5 +32,5 @@ TEST_F(MischbaresRezeptbuchTest, SetZutatenVerwalterTest){
   EXPECT_NO_FATAL_FAILURE(m->setZutatenVerwalter(z));
 }
 TEST_F(MischbaresRezeptbuchTest, boolZutatenCheckTest){
-  EXPECT_NO_FATAL_FAILURE(m->boolZutatenCheck("Eis"));
+  EXPECT_NO_FATAL_FAILURE(m->boolZutatenCheck("Eis", 50));
 }
