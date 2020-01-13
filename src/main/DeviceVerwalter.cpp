@@ -115,24 +115,24 @@ void DeviceVerwalter::printAmount(){
 }
 
 int DeviceVerwalter::checkForDouble(std::string ingredient) {
-  int o = 0;
+  //int o = 0;
   std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
   auto checkForSecond = zutatenMap->find(ingredient);
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it){
-    for(int i = 0; i <13; ++i){
-      if(it->first != doubleIngredients[i]){
+    //for(int i = 0; i <13; ++i){
+      //if(it->first != doubleIngredients[i]){
 
         if(it == checkForSecond){                                                                   //er springt nicht hier rein, obwohl er es sollte. bitte nochmal nachschauen
           return it->second;
         }
         else{
-          doubleIngredients[o] = it->first;
-          ++o;
-          return 0/*it->second + checkForSecond->second*/;
+          //doubleIngredients[o] = it->first;
+          //++o;
+          return it->second + checkForSecond->second;
         }
-      }
-      else{continue;}
-    }
+      //}
+      //else{continue;}
+    //}
   }
 
   return 0;
