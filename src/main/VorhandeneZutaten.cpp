@@ -55,7 +55,7 @@ VorhandeneZutaten::~VorhandeneZutaten(void) {
 
 void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
   std::ifstream in;
-  std::stringstream stream;
+  //std::stringstream stream;
 
   FileName = myfile;
 
@@ -70,14 +70,13 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
 
   std::cout << "Oeffne Zutatendatei " << FileName << std::endl;
 
-  std::string zeile, tmp;
+  std::string zeile/*, tmp*/;
 
   while (getline(in, zeile)) {
-    float amount = -1;
     float fuellmenge = 1000;
 
     if (zeile == "Limettenstuecke") {
-      amount = fuellmenge / 10;
+      float amount = fuellmenge / 10;
       zutatenMap->insert(std::pair<std::string, int>(zeile, amount));
     }
     /*if (zeile == "Eis"){
