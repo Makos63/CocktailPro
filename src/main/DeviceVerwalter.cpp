@@ -106,29 +106,32 @@ void DeviceVerwalter::printAmount(){
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
 
-    if(checkForSpecial(it->first)==true) {
+    //if(checkForSpecial(it->first)==true) {
 
       std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << checkForDouble(it->first)<< std::endl;
     //std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
-    }
+    //}
   }
 }
 
-int DeviceVerwalter::checkForDouble(std::string ingredient) {
+float DeviceVerwalter::checkForDouble(std::string ingredient) {
   //int o = 0;
   std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
   auto checkForSecond = zutatenMap->find(ingredient);
-  for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it){
+  for (auto ot = zutatenMap->begin(); ot != zutatenMap->end(); ++ot){
     //for(int i = 0; i <13; ++i){
       //if(it->first != doubleIngredients[i]){
-
-        if(it == checkForSecond){                                                                   //er springt nicht hier rein, obwohl er es sollte. bitte nochmal nachschauen
-          return it->second;
+    std::cout << ot->second << "it->second 1" << std::endl;
+        if(ot == checkForSecond){                                                                   //er springt nicht hier rein, obwohl er es sollte. bitte nochmal nachschauen
+          return ot->second;
         }
         else{
-          //doubleIngredients[o] = it->first;
-          //++o;
-          return it->second + checkForSecond->second;
+
+          std::cout << ot->second << "it->second" << std::endl;
+          std::cout << checkForSecond->second << "checkForSecond" << std::endl;
+          float amount = ot->second + checkForSecond->second;
+          return amount;
+
         }
       //}
       //else{continue;}

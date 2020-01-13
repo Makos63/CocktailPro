@@ -68,7 +68,7 @@ class DeviceVerwalter {
   /**
  * checks, if ingredient is double
  */
-  int checkForDouble(std::string);
+  float checkForDouble(std::string);
   /**
 * test for special ingredient
 */
