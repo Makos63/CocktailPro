@@ -103,26 +103,39 @@ void DeviceVerwalter::printWarning() {
 
 void DeviceVerwalter::printAmount(){
   std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
-  int o = 0;
-  std::string doubleIngredients[13];
+
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
 
     if(checkForSpecial(it->first)==true) {
-      auto checkForSecond = zutatenMap->find(it->first);
-      doubleIngredients[o] = checkForSecond->first;
-      ++o;
-      for (int k = 0; k < 13; ++k) {
-        if(it->first == doubleIngredients[k]){
-          std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second + checkForSecond->second<< std::endl;
-        }
-        else{
-          std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
-        }
-      }
 
-        //std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
+      std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << checkForDouble(it->first)<< std::endl;
+    //std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
     }
   }
+}
+
+int DeviceVerwalter::checkForDouble(std::string ingredient) {
+  int o = 0;
+  std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
+  auto checkForSecond = zutatenMap->find(ingredient);
+  for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it){
+    for(int i = 0; i <13; ++i){
+      if(it->first != doubleIngredients[i]){
+
+        if(it == checkForSecond){                                                                   //er springt nicht hier rein, obwohl er es sollte. bitte nochmal nachschauen
+          return it->second;
+        }
+        else{
+          doubleIngredients[o] = it->first;
+          ++o;
+          return 0/*it->second + checkForSecond->second*/;
+        }
+      }
+      else{continue;}
+    }
+  }
+
+  return 0;
 }
 
 bool DeviceVerwalter::checkForSpecial(std::string ingredient){

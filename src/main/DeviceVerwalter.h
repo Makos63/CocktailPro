@@ -66,10 +66,19 @@ class DeviceVerwalter {
   void printAmount();
 
   /**
+ * checks, if ingredient is double
+ */
+  int checkForDouble(std::string);
+  /**
 * test for special ingredient
 */
   bool checkForSpecial(std::string);
 
+ protected:
+  /**
+   * array to store the ingredients, which are double
+   */
+  std::string doubleIngredients[13];
  private:
   /**
    * sets the ze for this class
