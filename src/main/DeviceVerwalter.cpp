@@ -91,7 +91,10 @@ void DeviceVerwalter::printWarning() {
   std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
-    if (it->second <= 1000 * 0.2) {
+    if(it->first == "Limettenstuecke" && it->second <= 100*0.2){
+      std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
+    }
+    else if (it->second <= 1000 * 0.2) {
       std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
     }
   }
