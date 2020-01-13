@@ -1,13 +1,13 @@
-Limettenstuecke, 10
-Zucker, 1000
-Cointreau, 1000
-Cachaca, 1000
-Eis, 1000
-Wodka, 1000
-Rum weiss, 1000
-Zitronensaft, 1000
-Grenadine, 1000
-Limettensaft, 1000
-Tequilla, 1000
-Gin, 1000
-Noilly Prat, 1000
+Limettenstuecke
+Zucker
+Cointreau
+Cachaca
+Eis
+Wodka
+Rum weiss
+Zitronensaft
+Grenadine
+Limettensaft
+Tequilla
+Gin
+Noilly Prat

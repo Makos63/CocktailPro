@@ -70,24 +70,23 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
 
   std::cout << "Oeffne Zutatendatei " << FileName << std::endl;
 
-  std::string zeile, tmp, tmp1;
+  std::string zeile, tmp;
 
   while (getline(in, zeile)) {
     float amount = -1;
-    stream.clear();
-    stream << zeile;
-    getline(stream, tmp, ',');
-    getline(stream, tmp1);
+    float fuellmenge = 1000;
 
-    if (tmp == "Limettenstuecke") {
-      amount *= 10;
+    if (zeile == "Limettenstuecke") {
+      amount = fuellmenge / 10;
+      zutatenMap->insert(std::pair<std::string, int>(zeile, amount));
     }
-    if (tmp == "Eis"){
-      amount *= 20;
+    if (zeile == "Eis"){
+      amount = fuellmenge / 20;
+      zutatenMap->insert(std::pair<std::string, int>(zeile, amount));
     }
-    amount = std::stof(tmp1);
+    //amount = std::stof(tmp1);
 
-    zutatenMap->insert(std::pair<std::string, int>(tmp, amount));
+    zutatenMap->insert(std::pair<std::string, int>(zeile, fuellmenge));
   }
   in.close();
 }
@@ -143,11 +142,13 @@ int VorhandeneZutaten::getMenge(std::string i) {
   int amount;
   for(auto it = zutatenMap->begin(); it != zutatenMap->end(); it++){
     if(it->first == i) {
-      for (auto ot = it; ot != zutatenMap->end(); ot++) {
-        if (it->first == ot->first) {
+      amount = it->second;
+      /*for (auto ot = zutatenMap->end(); ot != it; ot++) {
+        if(ot == it){ ; }
+        else if (it->first == ot->first) {
           amount = it->second + ot->second;
         }
-      }
+      }*/
     }
   }
   return amount;
