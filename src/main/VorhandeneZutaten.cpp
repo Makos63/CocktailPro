@@ -80,10 +80,10 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
       amount = fuellmenge / 10;
       zutatenMap->insert(std::pair<std::string, int>(zeile, amount));
     }
-    if (zeile == "Eis"){
+    /*if (zeile == "Eis"){
       amount = fuellmenge / 20;
       zutatenMap->insert(std::pair<std::string, int>(zeile, amount));
-    }
+    }*/
     //amount = std::stof(tmp1);
 
     zutatenMap->insert(std::pair<std::string, int>(zeile, fuellmenge));
@@ -142,22 +142,17 @@ int VorhandeneZutaten::getMenge(std::string i) {
   int amount;
   for(auto it = zutatenMap->begin(); it != zutatenMap->end(); it++){
     if(it->first == i) {
+      //amount = it->second;
+      auto secondValue = zutatenMap->find(i);
+      if(it != secondValue){
+        amount = it->second + secondValue->second;
+      }
+      else{
       amount = it->second;
-      /*for (auto ot = zutatenMap->end(); ot != it; ot++) {
-        if(ot == it){ ; }
-        else if (it->first == ot->first) {
-          amount = it->second + ot->second;
-        }
-      }*/
+      }
     }
   }
   return amount;
-
-  /*auto it = zutatenMap->find(i);
-  if (it != zutatenMap->end()) {
-    return it->second;
-  }
-  return 0;*/
 }
 
 /*int VorhandeneZutaten::getAnzahlVorhandeneZutaten() {
