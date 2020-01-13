@@ -52,9 +52,10 @@ public:
   *	iterates through all recipes and checks, if all ingredients are available.
   *	if not, it deletes it, to reduce size of the vector.
   *	Look thru the lists of the cocktails recipes and get recipe steps and
-  *	calls @ref gesuchteZutatenExists
+  *	calls gesuchteZutatenExists
   */
   void loeschen();
+
 private:
 	/**
 	*	Object of the type "myZutatenverwalter" to check, which ingredients are available
