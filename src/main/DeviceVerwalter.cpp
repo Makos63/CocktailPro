@@ -94,7 +94,7 @@ void DeviceVerwalter::printWarning() {
     if(it->first == "Limettenstuecke" && it->second <= 100*0.2){
       std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
     }
-    else if (it->second <= 1000 * 0.2) {
+    else if (it->first != "Limettenstuecke" && it->second <= 1000 * 0.2) {
       std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
     }
   }
@@ -103,11 +103,24 @@ void DeviceVerwalter::printWarning() {
 
 void DeviceVerwalter::printAmount(){
   std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
-
+  int o = 0;
+  std::string doubleIngredients[13];
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
 
     if(checkForSpecial(it->first)==true) {
-        std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
+      auto checkForSecond = zutatenMap->find(it->first);
+      doubleIngredients[o] = checkForSecond->first;
+      ++o;
+      for (int k = 0; k < 13; ++k) {
+        if(it->first == doubleIngredients[k]){
+          std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second + checkForSecond->second<< std::endl;
+        }
+        else{
+          std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
+        }
+      }
+
+        //std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
     }
   }
 }

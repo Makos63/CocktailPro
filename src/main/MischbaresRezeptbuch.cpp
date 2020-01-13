@@ -55,6 +55,11 @@ void MischbaresRezeptbuch::loeschen() {                         //besser dekreme
       deleteRecipe(i);
     }
   }
+  if(this->getNumberOfRecipes() == 0){
+    std::cout << "##########################################################" << std::endl;
+    std::cout<< "WARNUNG, KEINE COCKTAILS MEHR MISCHBAR, BITTE NACHFUELLEN!" << std::endl;
+    std::cout << "##########################################################" << std::endl;
+  }
 }
 
 bool MischbaresRezeptbuch::boolZutatenCheck(const std::string &gesuchteZutat, int gesuchteMenge) const {
