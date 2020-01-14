@@ -121,20 +121,27 @@ float DeviceVerwalter::checkForDouble(std::string ingredient) {
   for (auto ot = zutatenMap->begin(); ot != zutatenMap->end(); ++ot){
     //for(int i = 0; i <13; ++i){
       //if(it->first != doubleIngredients[i]){
-    std::cout << ot->second << "it->second 1" << std::endl;
-        if(ot == checkForSecond){                                                                   //er springt nicht hier rein, obwohl er es sollte. bitte nochmal nachschauen
-          return ot->second;
-        }
-        else{
+      if(checkForSpecial(ot->first) == true) {
+        std::cout << ot->second << "it->second 1" << std::endl;
+        if (ot->first == checkForSecond->first && ot->second != checkForSecond->second) {                                                                   //er springt nicht hier rein, obwohl er es sollte. bitte nochmal nachschauen
 
           std::cout << ot->second << "it->second" << std::endl;
           std::cout << checkForSecond->second << "checkForSecond" << std::endl;
           float amount = ot->second + checkForSecond->second;
           return amount;
 
+          //return ot->second;
+        } else {
+
+          std::cout << ot->second << "it->second" << std::endl;
+          std::cout << checkForSecond->second << "checkForSecond" << std::endl;
+          /*float amount = ot->second + checkForSecond->second;
+          return amount;*/
+          return ot->second;
         }
-      //}
-      //else{continue;}
+        //}
+        //else{continue;}
+      }
     //}
   }
 
