@@ -5,7 +5,7 @@
 
 VorhandeneZutaten::VorhandeneZutaten(void) {
   this->zutaten = new std::vector<std::string>;
-  this->zutatenMap = new std::unordered_map<std::string, float>;
+  this->zutatenMap = new std::unordered_multimap<std::string, float>;
   lesen();
   this->anzahlDosierer = zutaten->size();
 
@@ -78,14 +78,9 @@ void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
     if (zeile == "Limettenstuecke") {
       float amount = fuellmenge / 10;
       zutatenMap->insert(std::pair<std::string, int>(zeile, amount));
+    } else {
+      zutatenMap->insert(std::pair<std::string, int>(zeile, fuellmenge));
     }
-    /*if (zeile == "Eis"){
-      amount = fuellmenge / 20;
-      zutatenMap->insert(std::pair<std::string, int>(zeile, amount));
-    }*/
-    //amount = std::stof(tmp1);
-
-    zutatenMap->insert(std::pair<std::string, int>(zeile, fuellmenge));
   }
   in.close();
 }
@@ -139,15 +134,14 @@ std::string VorhandeneZutaten::getZutat(std::string i) {
 int VorhandeneZutaten::getMenge(std::string i) {
   //return zutaten->at(i);
   int amount;
-  for(auto it = zutatenMap->begin(); it != zutatenMap->end(); it++){
-    if(it->first == i) {
+  for (auto it = zutatenMap->begin(); it != zutatenMap->end(); it++) {
+    if (it->first == i) {
       //amount = it->second;
       auto secondValue = zutatenMap->find(i);
-      if(it != secondValue){
+      if (it != secondValue) {
         amount = it->second + secondValue->second;
-      }
-      else{
-      amount = it->second;
+      } else {
+        amount = it->second;
       }
     }
   }
@@ -157,7 +151,7 @@ int VorhandeneZutaten::getMenge(std::string i) {
 /*int VorhandeneZutaten::getAnzahlVorhandeneZutaten() {
   return zutatenMap->size();
 }*/
-std::unordered_map<std::string, float> *VorhandeneZutaten::getZutatenMap() const {
+std::unordered_multimap<std::string, float> *VorhandeneZutaten::getZutatenMap() const {
   return zutatenMap;
 }
 

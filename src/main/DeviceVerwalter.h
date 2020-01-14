@@ -72,7 +72,7 @@ class DeviceVerwalter {
   /**
 * test for special ingredient
 */
-  bool checkForSpecial(std::string);
+  static bool checkForSpecial(const std::string&);
 
  protected:
   /**

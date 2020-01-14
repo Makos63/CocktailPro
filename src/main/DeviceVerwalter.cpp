@@ -58,7 +58,7 @@ void DeviceVerwalter::rezeptSchrittZubereiten(std::string zutat, float menge) {
   //std::map<std::string, InternalDevice *>::iterator tmpDevice;
 
   //tmpDevice = myDevices->find(zutat);
-  std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
+  std::unordered_multimap<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
   auto iterator = zutatenMap->find(zutat);
 
 
@@ -88,69 +88,51 @@ void DeviceVerwalter::putzen() {
 
 }
 void DeviceVerwalter::printWarning() {
-  std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
+  std::unordered_multimap<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
     if (it->first != "Limettenstuecke" && it->second <= 1000 * 0.2) {
       std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
-    }
-    else if(it->second <= 100*0.2){
+    } else if (it->second <= 100 * 0.2) {
       std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
     }
   }
 
 }
 
-void DeviceVerwalter::printAmount(){
-  std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
+void DeviceVerwalter::printAmount() {
+  std::unordered_multimap<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
 
-    //if(checkForSpecial(it->first)==true) {
+    if(checkForSpecial(it->first)==true) {
 
-      std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << checkForDouble(it->first)<< std::endl;
+    std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << checkForDouble(it->first)
+              << std::endl;
     //std::cout << "Zutat " << it->first << " besitzt den Fuellstand: " << it->second << std::endl;
-    //}
+    }
   }
 }
 
 float DeviceVerwalter::checkForDouble(std::string ingredient) {
   //int o = 0;
-  std::unordered_map<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
-  auto checkForSecond = zutatenMap->find(ingredient);
-  for (auto ot = zutatenMap->begin(); ot != zutatenMap->end(); ++ot){
-    //for(int i = 0; i <13; ++i){
-      //if(it->first != doubleIngredients[i]){
-      if(checkForSpecial(ot->first) == true) {
-        std::cout << ot->second << "it->second 1" << std::endl;
-        if (ot->first == checkForSecond->first && ot->second != checkForSecond->second) {                                                                   //er springt nicht hier rein, obwohl er es sollte. bitte nochmal nachschauen
+  std::unordered_multimap<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
+  float amountOfSecondContainer = 0;
 
-          std::cout << ot->second << "it->second" << std::endl;
-          std::cout << checkForSecond->second << "checkForSecond" << std::endl;
-          float amount = ot->second + checkForSecond->second;
-          return amount;
 
-          //return ot->second;
-        } else {
 
-          std::cout << ot->second << "it->second" << std::endl;
-          std::cout << checkForSecond->second << "checkForSecond" << std::endl;
-          /*float amount = ot->second + checkForSecond->second;
-          return amount;*/
-          return ot->second;
-        }
-        //}
-        //else{continue;}
+    for (auto & ing1 : *zutatenMap) {
+      if (ing1.first == ingredient && checkForSpecial(ingredient)) {
+        amountOfSecondContainer += ing1.second;
+
       }
-    //}
-  }
 
-  return 0;
+    }
+
+
+  return amountOfSecondContainer;
 }
 
-bool DeviceVerwalter::checkForSpecial(std::string ingredient){
-  if(ingredient == "Schuetteln" || ingredient == "Mischen" || ingredient == "Stampfen"){
-    return false;
-  }
-  else return true;
+bool DeviceVerwalter::checkForSpecial(const std::string& ingredient) {
+  return !(ingredient == "Schuetteln" || ingredient == "Mischen" || ingredient == "Stampfen");
 }

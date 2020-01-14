@@ -72,13 +72,13 @@ as string variables
 * a data structure (map) containing all availablie ingredients and amount
 */
 
-    std::unordered_map<std::string, float>* zutatenMap;
+    std::unordered_multimap<std::string, float>* zutatenMap;
  public:
   /**
    * Getter for ZutatenMap
    * @return pointer to unordned_map
    */
-  std::unordered_map<std::string, float> *getZutatenMap() const;
+  std::unordered_multimap<std::string, float> *getZutatenMap() const;
  private:
 /**
  * a static constant boolean variable  for debugging
