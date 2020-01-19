@@ -157,7 +157,7 @@ void RecipeBook::createBackupRecipes() {
   r1->appendStep("Noilly Prat", 1);
   r1->appendStep("Schuetteln", 10);
   this->m_Recipe.push_back(r1);
-
+/*
   r1 = new Recipe;
   r1->setRecipeNumber(98);
   r1->setName("TestCocktailLime80%");
@@ -169,7 +169,7 @@ void RecipeBook::createBackupRecipes() {
   r1->setName("TestCocktailIce80%");
   r1->appendStep("Eis", 800);
   this->m_Recipe.push_back(r1);
-
+*/
 
 
   r1 = new Recipe;
