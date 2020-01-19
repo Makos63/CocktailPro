@@ -104,7 +104,8 @@ void DeviceVerwalter::putzen() {
 }
 void DeviceVerwalter::printWarning() {
   std::unordered_multimap<std::string, float> *zutatenMap = myZutatenVerwalter->getZutatenMap();
-  std::unordered_map<std::string, bool> *alreadyPrinted = new std::unordered_map<std::string, bool>();
+  std::unordered_map<std::string, bool>
+      *alreadyPrinted = new std::unordered_map<std::string, bool>();
   //std::unordered_map<std::string, bool> alreadyPrinted;
 
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
@@ -123,7 +124,8 @@ void DeviceVerwalter::printWarning() {
       alreadyPrinted->insert(std::pair<std::string, bool>(it->first, false));
     }
   }
- delete alreadyPrinted, zutatenMap;
+  delete alreadyPrinted;
+  delete zutatenMap;
 }
 
 void DeviceVerwalter::printAmount() {
@@ -138,7 +140,8 @@ void DeviceVerwalter::printAmount() {
                 << std::endl;
     }
   }
-  delete alreadyPrinted, zutatenMap;
+  delete alreadyPrinted;,
+  delete zutatenMap;
 }
 
 float DeviceVerwalter::checkForDouble(std::string ingredient) {
