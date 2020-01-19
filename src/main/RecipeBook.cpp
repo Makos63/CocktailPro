@@ -50,9 +50,7 @@ Recipe * RecipeBook::findRecipe(unsigned int i) {
   return NULL;
 }
 
-Recipe *RecipeBook::
-
-getRecipe(unsigned int i) {
+Recipe *RecipeBook::getRecipe(unsigned int i) {
   if (i > m_Recipe.size()) return NULL;
   else {
     std::list<Recipe *>::iterator p; // Iterator
@@ -173,6 +171,19 @@ void RecipeBook::createBackupRecipes() {
   this->m_Recipe.push_back(r1);
 
 
+
+  r1 = new Recipe;
+  r1->setRecipeNumber(100);
+  r1->setName("LimettenstueckeTest159");
+  r1->appendStep("Limettenstuecke", 159);
+  this->m_Recipe.push_back(r1);
+
+
+  r1 = new Recipe;
+  r1->setRecipeNumber(101);
+  r1->setName("LimettenstueckeTest170");
+  r1->appendStep("Limettenstuecke", 170);
+  this->m_Recipe.push_back(r1);
 }
 
 /*void RecipeBook::readFile(std::ifstream &in) {
