@@ -1,5 +1,4 @@
 Limettenstuecke
-Limettenstuecke
 Zucker
 Cointreau
 Cachaca
@@ -12,3 +11,4 @@ Limettensaft
 Tequilla
 Gin
 Noilly Prat
+Limettenstuecke
