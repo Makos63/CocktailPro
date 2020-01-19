@@ -140,7 +140,7 @@ void DeviceVerwalter::printAmount() {
                 << std::endl;
     }
   }
-  delete alreadyPrinted;,
+  delete alreadyPrinted;
   delete zutatenMap;
 }
 
