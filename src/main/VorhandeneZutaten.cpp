@@ -12,57 +12,22 @@ VorhandeneZutaten::VorhandeneZutaten(void) {
 }
 VorhandeneZutaten::VorhandeneZutaten(const VorhandeneZutaten &vz)
     : zutaten(new std::vector<std::string>), anzahlDosierer(vz.anzahlDosierer) {
-  //TODO zutaten schould be initialised in lesen()
-  //this->zutaten = new std::vector<std::string>;
   lesen();
-  //this->anzahlDosierer = vz.anzahlDosierer;
 
 }
 
 
 VorhandeneZutaten::~VorhandeneZutaten(void) {
-  //TODO potencial memoryleak
 }
 
-/*void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
-    std::ifstream in;
-
-    FileName = myfile;
-
-    in.open(FileName.c_str(), std::ios::in); // c_str wandelt den String in char[]
-    // das braucht fstream
-
-    if (!in) {// File konnte nicht geoeffnet werden
-        std::string my_exception = "File not found: " + FileName;
-        std::cout << my_exception << std::endl;
-        throw my_exception;
-    }
-
-    std::cout << "Oeffne Zutatendatei " << FileName << std::endl;
-
-    std::string zeile;
-    while (getline(in, zeile)) {
-
-        // Cut trailing \r - to make Linux or Windows Files equal
-        if (zeile.size() && zeile[zeile.size() - 1] == '\r') {
-            zeile = zeile.substr(0, zeile.size() - 1);
-        }
-
-        this->zutaten->push_back(zeile);
-    }
-    in.close();
-}*/
 
 void VorhandeneZutaten::ZutatenDateiEinlesen(std::string myfile) {
   std::ifstream in;
-  //std::stringstream stream;
-
   FileName = myfile;
 
-  in.open(FileName.c_str(), std::ios::in); // c_str wandelt den String in char[]
-  // das braucht fstream
+  in.open(FileName.c_str(), std::ios::in);
 
-  if (!in) {// File konnte nicht geoeffnet werden
+  if (!in) {
     std::string my_exception = "File not found: " + FileName;
     std::cout << my_exception << std::endl;
     throw my_exception;

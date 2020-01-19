@@ -157,6 +157,19 @@ void RecipeBook::createBackupRecipes() {
   r1->appendStep("Noilly Prat", 1);
   r1->appendStep("Schuetteln", 10);
   this->m_Recipe.push_back(r1);
+
+  r1 = new Recipe;
+  r1->setRecipeNumber(100);
+  r1->setName("LimettenstueckeTest159");
+  r1->appendStep("Limettenstuecke", 159);
+  this->m_Recipe.push_back(r1);
+
+
+  r1 = new Recipe;
+  r1->setRecipeNumber(101);
+  r1->setName("LimettenstueckeTest170");
+  r1->appendStep("Limettenstuecke", 170);
+  this->m_Recipe.push_back(r1);
 }
 
 /*void RecipeBook::readFile(std::ifstream &in) {
