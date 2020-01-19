@@ -123,7 +123,7 @@ void DeviceVerwalter::printWarning() {
       alreadyPrinted->insert(std::pair<std::string, bool>(it->first, false));
     }
   }
- delete alreadyPrinted;
+ delete alreadyPrinted, zutatenMap;
 }
 
 void DeviceVerwalter::printAmount() {
@@ -138,7 +138,7 @@ void DeviceVerwalter::printAmount() {
                 << std::endl;
     }
   }
-  delete alreadyPrinted;
+  delete alreadyPrinted, zutatenMap;
 }
 
 float DeviceVerwalter::checkForDouble(std::string ingredient) {
