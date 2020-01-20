@@ -128,6 +128,8 @@ class DeviceVerwalter {
  */
   void createDevices();
 
+  void checkForProcentage(std::unordered_map<std::string, bool> *alreadyPrinted,
+                          const std::unordered_multimap<std::string, float>::iterator &it);
 };
 
 #endif
