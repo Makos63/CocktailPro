@@ -111,7 +111,7 @@ void DeviceVerwalter::printWarning() {
   for (auto it = zutatenMap->begin(); it != zutatenMap->end(); ++it) {
     checkForProcentage(alreadyPrinted, it);
   }
-  delete  alreadyPrinted;
+  delete alreadyPrinted;
 }
 void DeviceVerwalter::checkForProcentage(std::unordered_map<std::string, bool> *alreadyPrinted,
                                          const std::unordered_multimap<std::string,
@@ -121,14 +121,14 @@ void DeviceVerwalter::checkForProcentage(std::unordered_map<std::string, bool> *
       && alreadyPrinted->find(it->first) == alreadyPrinted->end()) {
 
     std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
-    alreadyPrinted->insert(std::__1::pair<std::string, bool>(it->first, false));
+    alreadyPrinted->insert(std::pair<std::string, bool>(it->first, false));
 
   } else if (checkForSpecial(it->first)
       && checkForDouble(it->first) <= 200 * 0.2
       && alreadyPrinted->find(it->first) == alreadyPrinted->end()) {
 
     std::cout << "ACHTUNG: Zutat " << it->first << " ist unter 20% ..." << std::endl;
-    alreadyPrinted->insert(std::__1::pair<std::string, bool>(it->first, false));
+    alreadyPrinted->insert(std::pair<std::string, bool>(it->first, false));
   }
 }
 
@@ -144,7 +144,7 @@ void DeviceVerwalter::printAmount() {
                 << std::endl;
     }
   }
-  delete  alreadyPrinted;
+  delete alreadyPrinted;
 }
 
 float DeviceVerwalter::checkForDouble(std::string ingredient) {
